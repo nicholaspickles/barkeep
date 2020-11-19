@@ -1,10 +1,12 @@
 import React from "react";
-import "antd/dist/antd.css";
-
-import { ShoppingCartOutlined } from "@ant-design/icons";
-
 import { Layout, Menu } from "antd";
 import { NavLink } from "react-router-dom";
+
+//DESIGNS IMPORT
+import "antd/dist/antd.css";
+import { ShoppingCartOutlined } from "@ant-design/icons";
+import {HeaderLogo, TopRightIcons} from '../styles';
+
 
 const { Header } = Layout;
 
@@ -17,9 +19,7 @@ const Head = () => {
     <div className="headerWrapper" style={{ textAlign: "center" }}>
       <Layout>
         <Header style={{ backgroundColor: "white" }}>
-          <div className="logo">
-            <NavLink to="/">B a r k e e p</NavLink>
-          </div>
+          <HeaderLogo to="/">B a r k e e p</HeaderLogo>
           <div className="menuItems">
             <Menu mode="horizontal" style={centerStyle}>
               <Menu.Item>
@@ -33,12 +33,11 @@ const Head = () => {
               </Menu.Item>
             </Menu>
           </div>
-          <ShoppingCartOutlined />
-          {/* <div className="sideIcons">
+          <TopRightIcons>
             <a href="/cart">
               <ShoppingCartOutlined />
             </a>
-          </div> */}
+          </TopRightIcons>
         </Header>
       </Layout>
     </div>
