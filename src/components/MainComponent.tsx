@@ -4,11 +4,13 @@ import { useSelector, useDispatch } from 'react-redux';
 
 //Components
 import Head from './HeaderComponent';
+import Foot from './FooterComponent';
 
 const Main = () => {
     return (
-        <Router >
+        <Router>
             <Head />
+            <Foot />
         </Router>
     );
 }
