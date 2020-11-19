@@ -2,7 +2,7 @@ import React from "react";
 import { Layout, Menu } from "antd";
 import { NavLink } from "react-router-dom";
 
-//DESIGNS IMPORT
+//AESTHETICS IMPORT
 import "antd/dist/antd.css";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import {HeaderLogo, TopRightIcons} from '../styles';
