@@ -7,6 +7,7 @@ import { Layout, Menu } from "antd";
 import { NavLink } from "react-router-dom";
 
 const { Header } = Layout;
+
 const Head = () => {
   const centerStyle = {
     display: "flex",
@@ -32,11 +33,12 @@ const Head = () => {
               </Menu.Item>
             </Menu>
           </div>
-          <div className="sideIcons">
+          <ShoppingCartOutlined />
+          {/* <div className="sideIcons">
             <a href="/cart">
               <ShoppingCartOutlined />
             </a>
-          </div>
+          </div> */}
         </Header>
       </Layout>
     </div>

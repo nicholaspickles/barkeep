@@ -7,7 +7,7 @@ import Head from './HeaderComponent';
 
 const Main = () => {
     return (
-        <Router >
+        <Router>
             <Head />
         </Router>
     );
