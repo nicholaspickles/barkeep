@@ -117,6 +117,7 @@ const Foot = () => {
           backgroundColor: "#3E3F5A",
           textAlign: "center",
           overflowY: "auto",
+          overflowX:'hidden'
         }}
       >
         <div style={{position:'relative'}}>
@@ -126,7 +127,7 @@ const Foot = () => {
             <Flower1 src={cutflower1} />
           </Col>
           <Col span={12} push={1}>
-            <Flower2 src={cutflower2} />
+            <Flower2 src={cutflower2} style={{overflowX:'hidden'}}/>
           </Col>
         </Row>
         </div>
