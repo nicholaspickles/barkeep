@@ -15,7 +15,6 @@ import Landing from "./Landing";
 import Products from "./Products";
 import About from "./About";
 import Contact from "./Contact";
-import Cart from "./Cart";
 import { ApplicationState } from "../redux/store";
 
 const Main = () => {
@@ -36,7 +35,6 @@ const Main = () => {
           <Route exact path="/products" component={Products} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
-          <Route path="/cart" component={Cart} />
         </Switch>
         <button onClick={handleClick}>add to cart</button>
         <h1>{numInCart}</h1>

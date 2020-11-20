@@ -10,13 +10,13 @@ export interface ItemDetails {
 }
 export interface CartState {
     numInCart: number,
-    itemsInCart: Array <ItemDetails>
+    itemsInCart: ItemDetails[] | "No items in cart"
 }
 
 //INITIAL STATE
 const initialState = {
     numInCart:0,
-    itemsInCart: "No items in cart."
+    itemsInCart: []
 }
 
 //ACTION CREATORS
@@ -27,10 +27,17 @@ export function updateCartNum(by) {
     }
 }
 
-export function addCartItems(additionalItem) {
+export function addCartItems(additionalItem: ItemDetails) {
     return {
         type: UPDATE_CART_ITEMS_ADD,
         payload: additionalItem
+    }
+}
+
+export function removeCartItems(removedItem: ItemDetails) {
+    return {
+        type: UPDATE_CART_ITEMS_ADD,
+        payload: removedItem
     }
 }
 
@@ -41,6 +48,16 @@ export default function reducer(state = initialState, action) {
             return {
                 ...state,
                 numInCart: state.numInCart + action.payload
+            }
+        case UPDATE_CART_ITEMS_ADD :
+            return {
+                itemsInCart: [...state.itemsInCart, action.payload]
+            }
+        case UPDATE_CART_ITEMS_REMOVE :
+            return {
+                itemsInCart: state.itemsInCart.filter(
+                    item => item.removedItem !== action.payload
+                )
             }
         default:
             return state;

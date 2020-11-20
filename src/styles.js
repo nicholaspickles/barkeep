@@ -2,7 +2,6 @@ import Styled from 'styled-components';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { Layout } from 'antd';
-const {Footer} = Layout;
 
 //HEADERS
 export const HeaderLogo = styled(NavLink)`
@@ -38,4 +37,10 @@ export const FootText = styled.div`
 export const FootTextBold = styled.div`
     font-weight:bold;
     margin-bottom: 10px;
+`
+
+export const FootWrapper = styled.div`
+    &::-webkit-scrollbar {
+        display:none
+    }
 `
