@@ -24,3 +24,18 @@ export const FootHeader = styled.div`
     font-size:15px;
     font-family:"Muli";
 `
+
+export const FootText = styled.div`
+    color:rgb(230, 220, 220);
+    font-size: 12px;
+    font-family: 'Muli';
+    font-weight: 100;
+    margin-top: 5px;
+    margin:4px;
+    padding:0;
+`
+
+export const FootTextBold = styled.div`
+    font-weight:bold;
+    margin-bottom: 10px;
+`

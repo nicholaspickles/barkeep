@@ -1,6 +1,7 @@
 import React from 'react';
 
 //AESTHETICS imports
+import {FootHeader, FootText, FootTextBold} from '../styles';
 import { Layout, Row, Col } from 'antd';
 import { InstagramOutlined, GithubOutlined, SmileOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
@@ -12,16 +13,16 @@ const {Footer} = Layout;
 const Queries = () => {
     return (
         <div>
-            <div>
-                <h4 className='footHeader'>S A Y &nbsp; H I !</h4>
-            </div>
-            <div className='footerText'>
+            <FootHeader>
+                <p>S A Y &nbsp; H I !</p>
+            </FootHeader>
+            <FootText>
                 <p>Got any questions,enquires or ideas?<br/>Feel free to get in touch with us!</p>
-                <div className='footerTextBold' style={{marginBottom:10}}>
+                <FootTextBold>
                     <p style={{marginTop:20}}>nicholaskongsg@gmail.com</p>
                     <p>+65 9855 6745</p>
-                </div>
-            </div>
+                </FootTextBold>
+            </FootText>
         </div>
     );
 }
@@ -29,19 +30,19 @@ const Queries = () => {
 const FollowUs = () => {
     return (
         <div>
-            <div className='footHeader'>
+            <FootHeader>
                 <p>F O L L O W &nbsp; U S </p>
-            </div>
-            <div className='footerText' style={{marginBottom:10, alignContent:"center"}}>
+            </FootHeader>
+            <FootText style={{marginBottom:10, alignContent:"center"}}>
                 <p>Nicholas "Pickles" Kong</p>
                 <a href="https://www.instagram.com/nicholaspickles/" target="_blank" style={{marginRight:20}}><InstagramOutlined style={{color:'white'}}/></a>
                 <a href= "https://www.github.com/NicholasKSK" target="_blank"><GithubOutlined style={{color:'white'}}/></a>
-            </div>
-            <div className='footerText' style={{marginBottom:10}}>
+            </FootText>
+            <FootText style={{marginBottom:10}}>
                 <p>Amanda "Sugarpeas" Kong</p>
                 <a href="https://www.instagram.com/kong.pdf/" target="_blank" style={{marginRight:20}}><InstagramOutlined style={{color:'white'}}/></a>
                 <a href="https://amandakongakk.wixsite.com/amandakong" target="_blank"><SmileOutlined style={{color:'white'}}/></a>
-            </div>
+            </FootText>
         </div>
     );
 }
@@ -49,12 +50,12 @@ const FollowUs = () => {
 const Policy = () => {
     return (
         <div>
-            <div className='footHeader'>
+            <FootHeader>
                 P O L I C Y
-            </div>
-            <div className='footerText'>
+            </FootHeader>
+            <FootText>
                 <p>Don't get sick - after I sell it to you,<br/>IT AIN'T MY PROBLEM</p>
-            </div>
+            </FootText>
         </div>
     );
 }
