@@ -5,6 +5,7 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
+import {Layout} from 'antd';
 
 //Components
 import Head from "./HeaderComponent";
@@ -14,18 +15,20 @@ import Products from "./Products";
 import About from "./About";
 import Contact from "./Contact";
 
+const {Header, Footer} = Layout;
+
 const Main = () => {
   return (
     <div>
       <Router>
-        <Head />
+          <Head />
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/products" component={Products} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
         </Switch>
-        <Foot />
+          <Foot />
       </Router>
     </div>
   );

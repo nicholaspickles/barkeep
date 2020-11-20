@@ -1,7 +1,7 @@
 import React from "react";
 
 //AESTHETICS imports
-import { FootHeader, FootText, FootTextBold, FootWrapper } from "../styles";
+import { FootHeader, FootText, FootTextBold, FootInfo, Flower1, Flower2 } from "../styles";
 import { Layout, Row, Col } from "antd";
 import {
   InstagramOutlined,
@@ -9,8 +9,8 @@ import {
   SmileOutlined,
 } from "@ant-design/icons";
 import "antd/dist/antd.css";
-import cutflower1 from "../images/cutflower1.png";
-import cutflower2 from "../images/cutflower2.png";
+import cutflower1 from "../localImages/cutflower1.png";
+import cutflower2 from "../localImages/cutflower2.png";
 
 const { Footer } = Layout;
 
@@ -88,7 +88,7 @@ const Policy = () => {
 
 const FooterText = () => {
   return (
-    <div className="footInfo">
+    <FootInfo>
       <Row justify="center" align="middle">
         <Col xs={24} xl={8}>
           <Queries />
@@ -100,57 +100,38 @@ const FooterText = () => {
           <Policy />
         </Col>
       </Row>
-    </div>
+    </FootInfo>
   );
 };
 
 const Foot = () => {
   return (
-    <FootWrapper>
-      <Layout>
-        <Footer
-          style={{
-            borderTop: "1px solid #e8e8e8",
-            position: "fixed",
-            left: 0,
-            bottom: 0,
-            width: "100%",
-            height: "30%",
-            backgroundColor: "#3E3F5A",
-            textAlign: "center",
-            overflowY: "auto",
-          }}
-        >
-          <div>
-            <img
-              src={cutflower1}
-              style={{
-                position: "absolute",
-                left: 0,
-                bottom: 0,
-                height: "75%",
-                width: "15%",
-                maxWidth: 300,
-                minWidth: 200,
-              }}
-            />
-            <img
-              src={cutflower2}
-              style={{
-                position: "absolute",
-                right: 0,
-                top: 0,
-                height: "75%",
-                width: "10%",
-                maxWidth: 300,
-                minWidth: 150,
-              }}
-            />
-          </div>
-          <FooterText />
-        </Footer>
-      </Layout>
-    </FootWrapper>
+    <Layout>
+      <Footer
+        style={{
+          borderTop: "1px solid #e8e8e8",
+          left: 0,
+          bottom: 0,
+          width: "100%",
+          height: "30%",
+          backgroundColor: "#3E3F5A",
+          textAlign: "center",
+          overflowY: "auto",
+        }}
+      >
+        <div style={{position:'relative'}}>
+        <FooterText />
+        <Row justify="space-around" align="bottom">
+          <Col span={12} pull={1}>
+            <Flower1 src={cutflower1} />
+          </Col>
+          <Col span={12} push={1}>
+            <Flower2 src={cutflower2} />
+          </Col>
+        </Row>
+        </div>
+      </Footer>
+    </Layout>
   );
 };
 

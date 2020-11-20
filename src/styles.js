@@ -39,8 +39,28 @@ export const FootTextBold = styled.div`
     margin-bottom: 10px;
 `
 
-export const FootWrapper = styled.div`
-    &::-webkit-scrollbar {
-        display:none
-    }
+export const FootInfo = styled.div`
+    bottom:0;
+    z-index:10;
+`
+
+export const Flower1 = styled.img`
+    position:absolute;
+    float:left;
+    left:0;
+    bottom:0;
+    height:200px;
+    width:200px;
+    maxWidth: 300px;
+    minWidth: 200px;
+`
+
+export const Flower2 = styled.img`
+    position:absolute;
+    right:0;
+    bottom:0;
+    height:200px;
+    width:200px;
+    maxWidth: 300px;
+    minWidth: 200px;
 `

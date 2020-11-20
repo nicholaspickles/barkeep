@@ -5,7 +5,8 @@ const UPDATE_CART_ITEMS_REMOVE = 'barkeep/cart/UPDATE_CART_ITEMS_REMOVE';
 
 export interface ItemDetails {
     id: number,
-    quantity: number,
+    name: string,
+    quantity?: number,
     image : string,
 }
 export interface CartState {

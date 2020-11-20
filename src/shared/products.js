@@ -3,9 +3,10 @@ export const DrinkData = [
       "id": 0,
       "name": "Silent Pool Gin",
       "price": "$20",
-      "image_1": "",
+      "image_1": "/assets/images/silentPool.png",
       "image_2": "",
       "image_3": "",
+      "back":"/assets/images/silentBack.png",
       "description": "My favorite silent pool gin",
       "strength": 3
     },
@@ -13,9 +14,10 @@ export const DrinkData = [
       "id": 1,
       "name": "Monkey 47 Gin",
       "price": "$17",
-      "image_1": "",
+      "image_1": "/assets/images/monkey47.png",
       "image_2": "",
       "image_3": "",
+      "back":"/assets/images/monkeyBack.png",
       "description": "my favorite Monkey 47 Gin",
       "strength": 3
     },
