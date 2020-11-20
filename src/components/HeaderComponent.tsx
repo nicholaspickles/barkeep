@@ -1,16 +1,20 @@
 import React from "react";
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Badge } from "antd";
 import { NavLink } from "react-router-dom";
+
+//REDUX
+import {ApplicationState} from '../redux/store';
+import {useSelector} from 'react-redux';
 
 //AESTHETICS IMPORT
 import "antd/dist/antd.css";
 import { ShoppingCartOutlined } from "@ant-design/icons";
-import {HeaderLogo, TopRightIcons} from '../styles';
-
+import { HeaderLogo, TopRightIcons } from "../styles";
 
 const { Header } = Layout;
 
 const Head = () => {
+  const numInCart = useSelector((state:ApplicationState) => state.cart.numInCart);
   const centerStyle = {
     display: "flex",
     justifyContent: "center",
@@ -23,7 +27,7 @@ const Head = () => {
           <div className="menuItems">
             <Menu mode="horizontal" style={centerStyle}>
               <Menu.Item>
-                <NavLink to="/products">PRODUCT</NavLink>
+                <NavLink to="/products">PRODUCTS</NavLink>
               </Menu.Item>
               <Menu.Item>
                 <NavLink to="/about">OUR STORY</NavLink>
@@ -34,9 +38,11 @@ const Head = () => {
             </Menu>
           </div>
           <TopRightIcons>
-            <a href="/cart">
-              <ShoppingCartOutlined />
-            </a>
+            <Badge count={numInCart}>
+              <a href="/cart">
+                <ShoppingCartOutlined style={{fontSize:"140%", color:"black"}}/>
+              </a>
+            </Badge>
           </TopRightIcons>
         </Header>
       </Layout>
