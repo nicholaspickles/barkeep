@@ -8,9 +8,10 @@ import { useSelector } from "react-redux";
 import { ShoppingCartOutlined, RightOutlined } from "@ant-design/icons";
 
 const CartDrawer = () => {
-  const numInCart = useSelector(
-    (state: ApplicationState) => state.cart.numInCart
+  const cart = useSelector(
+    (state: ApplicationState) => state.cart.itemsInCart
   );
+  const numInCart = cart.length;
   const [visible, setVisible] = useState(false);
   const showDrawer = () => {
     setVisible(true);

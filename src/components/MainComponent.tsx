@@ -5,8 +5,6 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { updateCartNum } from "../redux/ducks/cart";
 
 //Components
 import Head from "./HeaderComponent";
@@ -15,17 +13,8 @@ import Landing from "./Landing";
 import Products from "./Products";
 import About from "./About";
 import Contact from "./Contact";
-import { ApplicationState } from "../redux/store";
 
 const Main = () => {
-  const numInCart = useSelector(
-    (state: ApplicationState) => state.cart.numInCart
-  );
-  const dispatch = useDispatch();
-  const handleClick = () => {
-    dispatch(updateCartNum(1));
-  };
-
   return (
     <div>
       <Router>
@@ -36,8 +25,6 @@ const Main = () => {
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
         </Switch>
-        <button onClick={handleClick}>add to cart</button>
-        <h1>{numInCart}</h1>
         <Foot />
       </Router>
     </div>

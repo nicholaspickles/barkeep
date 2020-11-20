@@ -47,7 +47,7 @@ export default function reducer(state = initialState, action) {
         case UPDATE_CART_NUMBER :
             return {
                 ...state,
-                numInCart: state.numInCart + action.payload
+                numInCart: state.itemsInCart.length
             }
         case UPDATE_CART_ITEMS_ADD :
             return {
