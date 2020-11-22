@@ -9,7 +9,7 @@ import {DrinkData} from '../shared/products';
 import create from '@ant-design/icons/lib/components/IconFont';
 
 export function createEntry(item: ItemDetails): {id:number; quantity:number; image:string; name:string} {
-    let newEntry = {id:1, quantity:1, name:'default name', image:'here it is'};
+    let newEntry = {id:1, quantity:1, name:'default name', image:'empty image'};
     if (item.id) {
         newEntry.id = item.id;
     }

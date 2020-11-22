@@ -13,38 +13,31 @@ const CartContent = () => {
   const ordered = useSelector(
     (state: ApplicationState) => state.cart.itemsInCart
   );
-  //TODO: compile all the items in ordered and adjust quantities
-  const handleClick = () => {
-    var finalArr: Array<ItemDetails> = [];
-    var idArrays = ordered.map((x) => x.id);
-    var orderBank = {};
-    for (let i of idArrays) {
-      if (i in orderBank) {
-        orderBank[i] += 1;
-      } else {
-        orderBank[i] = 1;
-      }
+  const finalArr: Array<ItemDetails> = [];
+  var idArrays = ordered.map((x) => x.id);
+  var orderBank = {};
+  for (let i of idArrays) {
+    if (i in orderBank) {
+      orderBank[i] += 1;
+    } else {
+      orderBank[i] = 1;
     }
-    for (const [key,value] of Object.entries(orderBank)) {
-      var curr = DrinkData[key];
-      // console.log("curr", curr)
-      finalArr.push(createEntry({id:{key}, quantity:{value}, image:DrinkData[key].image, name:DrinkData[key].name}));
-    }
-    console.log(finalArr);
-  };
+  }
+  for (const [key,value] of Object.entries(orderBank)) {
+    finalArr.push(createEntry({id:key, quantity:value, image:DrinkData[key].image, name:DrinkData[key].name}));
+  }
+
   return (
     <div>
-      {ordered.length > 0 ? (
-        ordered.map((order) => (
-          <div>
+      {finalArr.length > 0 ? (
+        finalArr.map((order) => (
+          <div key={order.id}>
             {order.quantity} x {order.name}
           </div>
         ))
       ) : (
         <div>Cart is empty</div>
       )}
-      <button onClick={handleClick}>Checker</button>
-
     </div>
   );
 };
