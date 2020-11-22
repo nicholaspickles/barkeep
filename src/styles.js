@@ -39,7 +39,7 @@ export const FootTextBold = styled.div`
 
 export const FootInfo = styled.div`
     bottom:0;
-    z-index:10;
+    z-index:2;
 `
 
 export const Flower1 = styled.img`
@@ -51,6 +51,7 @@ export const Flower1 = styled.img`
     width:200px;
     maxWidth: 300px;
     minWidth: 200px;
+    z-index:1;
 `
 
 export const Flower2 = styled.img`
@@ -61,4 +62,6 @@ export const Flower2 = styled.img`
     width:200px;
     maxWidth: 300px;
     minWidth: 200px;
+    overflowX: hidden;
+    z-index:1;
 `

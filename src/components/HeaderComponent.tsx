@@ -25,7 +25,7 @@ const Head = () => {
                 <NavLink to="/products">PRODUCTS</NavLink>
               </Menu.Item>
               <Menu.Item>
-                <NavLink to="/about">OUR STORY</NavLink>
+                <NavLink to="/about">ABOUT BARKEEP</NavLink>
               </Menu.Item>
               <Menu.Item>
                 <NavLink to="/contact">CONTACT US</NavLink>

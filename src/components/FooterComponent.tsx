@@ -144,7 +144,7 @@ const Foot = () => {
               <Flower1 src={cutflower1} />
             </Col>
             <Col span={12} push={1}>
-              <Flower2 src={cutflower2} style={{ overflowX: "hidden" }} />
+              <Flower2 src={cutflower2}/>
             </Col>
           </Row>
         </div>
