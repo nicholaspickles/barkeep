@@ -1,19 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { ApplicationState } from "../../redux/store";
-import { ItemDetails } from "../../redux/ducks/cart";
-import { useSelector } from "react-redux";
-import { findAllByDisplayValue } from "@testing-library/react";
-import { ConsoleSqlOutlined } from "@ant-design/icons";
-import { createEntry } from '../Products';
-import {DrinkData} from '../../shared/products';
-import create from "@ant-design/icons/lib/components/IconFont";
+import { ItemDetails, makeCartConcise } from "../../redux/ducks/cart";
+import { useDispatch, useSelector } from "react-redux";
+import { createEntry } from "../Products";
+import { DrinkData } from "../../shared/products";
 
 const CartContent = () => {
+  const dispatch = useDispatch();
   const ordered = useSelector(
     (state: ApplicationState) => state.cart.itemsInCart
   );
   const finalArr: Array<ItemDetails> = [];
+
   var idArrays = ordered.map((x) => x.id);
   var orderBank = {};
   for (let i of idArrays) {
@@ -23,8 +22,15 @@ const CartContent = () => {
       orderBank[i] = 1;
     }
   }
-  for (const [key,value] of Object.entries(orderBank)) {
-    finalArr.push(createEntry({id:key, quantity:value, image:DrinkData[key].image, name:DrinkData[key].name}));
+  for (const [key, value] of Object.entries(orderBank)) {
+    finalArr.push(
+      createEntry({
+        id: key,
+        quantity: value,
+        image: DrinkData[key].image,
+        name: DrinkData[key].name,
+      })
+    );
   }
 
   return (

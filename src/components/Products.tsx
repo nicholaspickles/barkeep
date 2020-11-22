@@ -47,8 +47,6 @@ const Product = () => {
     // const neww = createEntry({id:1, quantity:5, image:'herherh', name:'yo momma'});
 
     const handleClick1 = () => {
-        console.log(items);
-        console.log(DrinkData);
         const order = createEntry({id:1, quantity: 1, image:"imageLocation", name:"silent poolz"});
         dispatch(addCartItems(order));
     }

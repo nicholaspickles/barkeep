@@ -11,7 +11,9 @@ const CartDrawer = () => {
   const cart = useSelector(
     (state: ApplicationState) => state.cart.itemsInCart
   );
-  const numInCart = cart.length;
+  const numInCart = cart.reduce(function (acc, cur) {
+    return acc + cur.quantity
+  },0 )
   const [visible, setVisible] = useState(false);
   const showDrawer = () => {
     setVisible(true);
