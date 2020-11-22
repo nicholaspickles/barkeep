@@ -6,7 +6,7 @@ import {addCartItems, ItemDetails, removeCartItems} from '../redux/ducks/cart';
 import {useDispatch, useSelector} from 'react-redux';
 
 import {DrinkData} from '../shared/products';
-import create from '@ant-design/icons/lib/components/IconFont';
+
 
 export function createEntry(item: ItemDetails): {id:number; quantity:number; image:string; name:string} {
     let newEntry = {id:1, quantity:1, name:'default name', image:'empty image'};

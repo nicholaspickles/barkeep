@@ -1,7 +1,14 @@
 import React from "react";
 
 //AESTHETICS imports
-import { FootHeader, FootText, FootTextBold, FootInfo, Flower1, Flower2 } from "../styles";
+import {
+  FootHeader,
+  FootText,
+  FootTextBold,
+  FootInfo,
+  Flower1,
+  Flower2,
+} from "../styles";
 import { Layout, Row, Col } from "antd";
 import {
   InstagramOutlined,
@@ -45,12 +52,17 @@ const FollowUs = () => {
         <p>Nicholas "Pickles" Kong</p>
         <a
           href="https://www.instagram.com/nicholaspickles/"
+          rel="noreferrer"
           target="_blank"
           style={{ marginRight: 20 }}
         >
           <InstagramOutlined style={{ color: "white" }} />
         </a>
-        <a href="https://www.github.com/NicholasKSK" target="_blank">
+        <a
+          href="https://www.github.com/NicholasKSK"
+          target="_blank"
+          rel="noreferrer"
+        >
           <GithubOutlined style={{ color: "white" }} />
         </a>
       </FootText>
@@ -58,12 +70,17 @@ const FollowUs = () => {
         <p>Amanda "Sugarpeas" Kong</p>
         <a
           href="https://www.instagram.com/kong.pdf/"
+          rel="noreferrer"
           target="_blank"
           style={{ marginRight: 20 }}
         >
           <InstagramOutlined style={{ color: "white" }} />
         </a>
-        <a href="https://amandakongakk.wixsite.com/amandakong" target="_blank">
+        <a
+          href="https://amandakongakk.wixsite.com/amandakong"
+          target="_blank"
+          rel="noreferrer"
+        >
           <SmileOutlined style={{ color: "white" }} />
         </a>
       </FootText>
@@ -117,19 +134,19 @@ const Foot = () => {
           backgroundColor: "#3E3F5A",
           textAlign: "center",
           overflowY: "auto",
-          overflowX:'hidden'
+          overflowX: "hidden",
         }}
       >
-        <div style={{position:'relative'}}>
-        <FooterText />
-        <Row justify="space-around" align="bottom">
-          <Col span={12} pull={1}>
-            <Flower1 src={cutflower1} />
-          </Col>
-          <Col span={12} push={1}>
-            <Flower2 src={cutflower2} style={{overflowX:'hidden'}}/>
-          </Col>
-        </Row>
+        <div style={{ position: "relative" }}>
+          <FooterText />
+          <Row justify="space-around" align="bottom">
+            <Col span={12} pull={1}>
+              <Flower1 src={cutflower1} />
+            </Col>
+            <Col span={12} push={1}>
+              <Flower2 src={cutflower2} style={{ overflowX: "hidden" }} />
+            </Col>
+          </Row>
         </div>
       </Footer>
     </Layout>

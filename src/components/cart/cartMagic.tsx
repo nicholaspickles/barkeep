@@ -1,13 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { ApplicationState } from "../../redux/store";
-import { ItemDetails, makeCartConcise } from "../../redux/ducks/cart";
-import { useDispatch, useSelector } from "react-redux";
+import { ItemDetails } from "../../redux/ducks/cart";
+import { useSelector } from "react-redux";
 import { createEntry } from "../Products";
 import { DrinkData } from "../../shared/products";
 
 const CartContent = () => {
-  const dispatch = useDispatch();
   const ordered = useSelector(
     (state: ApplicationState) => state.cart.itemsInCart
   );

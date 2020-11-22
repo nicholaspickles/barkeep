@@ -1,11 +1,9 @@
 import React from "react";
 import {
   BrowserRouter as Router,
-  Redirect,
   Route,
   Switch,
 } from "react-router-dom";
-import {Layout} from 'antd';
 
 //Components
 import Head from "./HeaderComponent";
@@ -14,8 +12,6 @@ import Landing from "./Landing";
 import Products from "./Products";
 import About from "./About";
 import Contact from "./Contact";
-
-const {Header, Footer} = Layout;
 
 const Main = () => {
   return (
