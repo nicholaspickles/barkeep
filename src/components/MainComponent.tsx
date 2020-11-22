@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 //Components
 import Head from "./HeaderComponent";
@@ -17,14 +13,18 @@ const Main = () => {
   return (
     <div>
       <Router>
-          <Head />
-        <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/products" component={Products} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
-        </Switch>
+        <Head />
+        <div className="body" style={{height:'100%', minHeight:'100%'}}>
+          <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/products" component={Products} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+          </Switch>
+        </div>
+        <div>
           <Foot />
+        </div>
       </Router>
     </div>
   );

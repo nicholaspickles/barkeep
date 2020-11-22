@@ -65,3 +65,26 @@ export const Flower2 = styled.img`
     overflowX: hidden;
     z-index:1;
 `
+
+//ABOUT
+export const AboutUsWrapper = styled.div`
+    margin-top: 5%;
+`
+export const AboutUsHeader = styled.h1`
+    text-align: center;
+`
+
+export const AboutUsText = styled.p`
+    margin-left: 12%;
+    margin-right:12%;
+    font-size:15px;
+`
+export const Carouselh3 = styled.h3`
+    height: 250px;
+    margin-right:10%;
+    margin-left:10%;
+    color: #fff;
+    line-height: 160px;
+    text-align: center;
+    background-color: #364d79;
+`
