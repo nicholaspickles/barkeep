@@ -11,7 +11,7 @@ import monkeyBack from '../localImages/whiteMonkey.png';
 const About = () => {
   return (
     <AboutUsWrapper>
-      <Carousel autoplay autoplaySpeed={3500} speed = {1500} style={{marginBottom:'3%'}}>
+      <Carousel autoplay autoplaySpeed={3000} speed = {1500} style={{marginBottom:'3%'}}>
           <CarouselWrapper>
             <Carouselh3><StyledImage src={silentBack} /></Carouselh3>
           </CarouselWrapper>
@@ -20,7 +20,7 @@ const About = () => {
           </CarouselWrapper>
       </Carousel>
       <AboutUsHeader>
-        Bringing cheap, experimental cocktails for everyone.
+        Bringing affordable, experimental cocktails for everyone.
       </AboutUsHeader>
       <hr style={{ marginRight: "5%", marginLeft: "5%", marginBottom: "2%" }} />
       <h3 style={{ marginLeft: "2%", marginBottom: "2%", textAlign: "center" }}>

@@ -6,7 +6,7 @@ export interface ItemDetails {
     id: any,
     name: string,
     quantity?: any,
-    image : string,
+    image: any,
 }
 export interface CartState {
     itemsInCart: ItemDetails[] | "No items in cart"
