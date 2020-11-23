@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { Card, Tabs, Row, Col, Button, message } from "antd";
 import "antd/dist/antd.css";
 import { AddToCart } from "../styles";
@@ -57,11 +58,10 @@ const DisplayDrinks = ({ drinkList }) => {
     } else {
       message.success({
         content: `${order.quantity} x ${order.name} has been added to your bag.`,
-        duration:0.8,
-        style:{
-            marginTop: '40px',
-
-        }
+        duration: 0.8,
+        style: {
+          marginTop: "40px",
+        },
       });
     }
   };
@@ -99,6 +99,7 @@ const DisplayDrinks = ({ drinkList }) => {
     </div>
   );
 };
+
 const Product = () => {
   const dispatch = useDispatch();
   const items = useSelector(
@@ -107,7 +108,11 @@ const Product = () => {
 
   return (
     <div>
-      <Tabs defaultActiveKey="1" centered style={{ marginTop: "3%" }}>
+      <Tabs
+        defaultActiveKey="1"
+        centered
+        style={{ marginTop: "2%", marginRight: "10%", marginLeft: "10%" }}
+      >
         <TabPane tab="All" key="1">
           <DisplayDrinks drinkList={DrinkData} />
         </TabPane>

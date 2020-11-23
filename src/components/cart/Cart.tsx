@@ -35,7 +35,7 @@ const CartDrawer = () => {
           <ShoppingCartOutlined style={{ fontSize: "140%", color: "black" }} />
         </Button>
         <Drawer
-          title="Your Cart"
+          title="Your Cart:"
           placement="right"
           closable={false}
           onClose={onClose}

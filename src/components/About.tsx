@@ -11,7 +11,7 @@ import monkeyBack from '../localImages/whiteMonkey.png';
 const About = () => {
   return (
     <AboutUsWrapper>
-      <Carousel autoplay autoplaySpeed={3000} speed = {1500} style={{marginBottom:'3%'}}>
+      <Carousel autoplay autoplaySpeed={6000} speed = {1500} style={{marginBottom:'3%'}}>
           <CarouselWrapper>
             <Carouselh3><StyledImage src={silentBack} /></Carouselh3>
           </CarouselWrapper>
