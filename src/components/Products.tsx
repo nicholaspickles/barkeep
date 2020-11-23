@@ -1,5 +1,6 @@
 import React from "react";
-import { Card, Tabs } from "antd";
+import { Card, Tabs, Row, Col } from "antd";
+import "antd/dist/antd.css";
 
 import { ApplicationState } from "../redux/store";
 import {
@@ -30,49 +31,26 @@ export function createEntry(
   }
   return newEntry;
 }
-
 const { TabPane } = Tabs;
 
-export const sampleData = [
-  {
-    id: 0,
-    name: "first drink",
-  },
-  {
-    id: 1,
-    name: "second drink",
-  },
-];
-export const sampleData2 = [
-    {
-      id: 0,
-      name: "Monkey",
-    },
-    {
-      id: 1,
-      name: "monkey 2",
-    },
-  ];
-  export const sampleData3 = [
-    {
-      id: 0,
-      name: "silent",
-    },
-    {
-      id: 1,
-      name: "silent 2",
-    },
-  ];
+const cocktails = DrinkData.map((drink) => {
 
+})
 const DisplayDrinks = ({ drinkList }) => {
   return (
-    <Card>
+    <Row gutter={16}>
       {drinkList.map((drink) => (
-        <Card.Grid style={{ width: "25%", textAlign: "center" }}>
-          {drink.name}
-        </Card.Grid>
+        <Col span={8}>
+          <Card hoverable bordered={false} style={{ marginLeft:"9%", marginTop: "5%", textAlign:'center', width:'80%' }}>
+            <img src={drink.image} style={{maxHeight:200, maxWidth:200}} />
+            <br />
+            {drink.name}
+            <br />
+            {drink.price}
+          </Card>
+        </Col>
       ))}
-    </Card>
+    </Row>
   );
 };
 const Product = () => {
@@ -80,7 +58,39 @@ const Product = () => {
   const items = useSelector(
     (state: ApplicationState) => state.cart.itemsInCart
   );
-  //   const handleClick1 = () => {
+
+  return (
+    <div>
+      <Tabs defaultActiveKey="1" centered style={{ marginTop: "3%" }}>
+        <TabPane tab="All" key="1">
+          <DisplayDrinks drinkList={DrinkData} />
+        </TabPane>
+        {/* <TabPane tab="Cocktails" key="2">
+          <DisplayDrinks drinkList={sampleData2} />
+        </TabPane>
+        <TabPane tab="Non-alcoholic" key="3">
+          <DisplayDrinks drinkList={sampleData3} />
+        </TabPane> */}
+      </Tabs>
+    </div>
+  );
+};
+
+export default Product;
+
+{
+  /* <h1>PRODUCT PAGE</h1>
+            <button onClick={handleClick1}>Add to Cart</button>
+            <button onClick={handleClick2}>Add other to Cart</button>
+            <div>
+                {DrinkData.map(drink => <div>
+                    <p>a drink</p>
+                    <img src={drink.image_1} />
+                </div>)}
+            </div> */
+}
+
+ //   const handleClick1 = () => {
   //     const order = createEntry({
   //       id: 1,
   //       quantity: 1,
@@ -98,31 +108,3 @@ const Product = () => {
   //     });
   //     dispatch(addCartItems(order));
   //   };
-  return (
-    <div>
-      <Tabs defaultActiveKey="1" centered style={{ marginTop: "3%" }}>
-        <TabPane tab="All" key="1">
-          <DisplayDrinks drinkList={sampleData} />
-        </TabPane>
-        <TabPane tab="Cocktails" key="2">
-            <DisplayDrinks drinkList={sampleData2} />
-        </TabPane>
-        <TabPane tab="Non-alcoholic" key="3">
-            <DisplayDrinks drinkList={sampleData3} />
-        </TabPane>
-      </Tabs>
-    </div>
-  );
-};
-
-export default Product;
-
-      {/* <h1>PRODUCT PAGE</h1>
-            <button onClick={handleClick1}>Add to Cart</button>
-            <button onClick={handleClick2}>Add other to Cart</button>
-            <div>
-                {DrinkData.map(drink => <div>
-                    <p>a drink</p>
-                    <img src={drink.image_1} />
-                </div>)}
-            </div> */}
