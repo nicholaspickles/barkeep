@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import cocktails from "./localImages/cocktais.jpg";
+
 
 //HEADERS
 export const HeaderLogo = styled(NavLink)`
@@ -80,11 +82,25 @@ export const AboutUsText = styled.p`
     font-size:15px;
 `
 export const Carouselh3 = styled.h3`
-    height: 250px;
+    height: 500px;
+    color: black;
+    background-color:white;
     margin-right:10%;
     margin-left:10%;
-    color: #fff;
     line-height: 160px;
     text-align: center;
-    background-color: #364d79;
+`
+export const CarouselWrapper = styled.div`
+    height: 500px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+`
+export const StyledImage = styled.img`
+    display: block;
+    height:100%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:auto;
 `

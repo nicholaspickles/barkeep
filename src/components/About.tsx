@@ -2,27 +2,22 @@ import React from "react";
 
 import 'antd/dist/antd.css';
 import { Carousel } from "antd";
-import { AboutUsWrapper, AboutUsHeader, AboutUsText, Carouselh3 } from "../styles";
+import { AboutUsWrapper, AboutUsHeader, AboutUsText, Carouselh3, CarouselWrapper, StyledImage } from "../styles";
 
-import cocktails from "../localImages/cocktais.jpg";
-import abs from '../localImages/absinthe.png';
+import silentBack from '../localImages/whiteSilent.png';
+import monkeyBack from '../localImages/whiteMonkey.png';
+
 
 const About = () => {
   return (
     <AboutUsWrapper>
-      <Carousel autoplay autoplaySpeed={3500} effect="fade" speed = {1500}>
-        <div>
-          <Carouselh3>image 1</Carouselh3>
-        </div>
-        <div>
-          <Carouselh3>image 2</Carouselh3>
-        </div>
-        <div>
-          <Carouselh3>Image 3</Carouselh3>
-        </div>
-        <div>
-          <Carouselh3>Image 4</Carouselh3>
-        </div>
+      <Carousel autoplay autoplaySpeed={3500} speed = {1500} style={{marginBottom:'3%'}}>
+          <CarouselWrapper>
+            <Carouselh3><StyledImage src={silentBack} /></Carouselh3>
+          </CarouselWrapper>
+          <CarouselWrapper>
+            <Carouselh3><StyledImage src={monkeyBack} /></Carouselh3>
+          </CarouselWrapper>
       </Carousel>
       <AboutUsHeader>
         Bringing cheap, experimental cocktails for everyone.
@@ -43,7 +38,7 @@ const About = () => {
       <h3 style={{ textAlign: "center" }}>
         We aren't bar professions - just a team of cocktail lovers
       </h3>
-      <AboutUsText>
+      <AboutUsText style={{marginBottom:'10%'}}>
         Don't worry! Our consistent testing and sampling of cocktails with
         experiment and feedback sessions help to ensure that the cocktails you
         get are to our standards.
