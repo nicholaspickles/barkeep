@@ -1,38 +1,45 @@
 import React, { useState } from "react";
 import { Badge, Button, Drawer } from "antd";
-import CartContent from './cartMagic';
+import CartContent from "./cartMagic";
 
 import { ApplicationState } from "../../redux/store";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setCartVisibility } from "../../redux/ducks/cart";
 
 import { ShoppingCartOutlined, RightOutlined } from "@ant-design/icons";
 
 const CartDrawer = () => {
-  const cart = useSelector(
-    (state: ApplicationState) => state.cart.itemsInCart
-  );
+  const cart = useSelector((state: ApplicationState) => state.cart.itemsInCart);
   const numInCart = cart.reduce(function (acc, cur) {
-    return acc + cur.quantity
-  },0 )
-  const [visible, setVisible] = useState(false);
+    return acc + cur.quantity;
+  }, 0);
+  const visibility = useSelector((state:ApplicationState) => state.cart.showDrawer);
+  const dispatch = useDispatch();
   const showDrawer = () => {
-    setVisible(true);
+    dispatch(setCartVisibility(true));
   };
   const onClose = () => {
-    setVisible(false);
+    dispatch(setCartVisibility(false));
   };
   return (
     <>
-      <Badge count={numInCart} style={{backgroundColor:'#3E3F5A', color:'white', boxShadow: '0 0 1px #d9d9d9 inset'}}>
+      <Badge
+        count={numInCart}
+        style={{
+          backgroundColor: "#3E3F5A",
+          color: "white",
+          boxShadow: "0 0 1px #d9d9d9 inset",
+        }}
+      >
         <Button type="text" size="small" onClick={showDrawer}>
-          <ShoppingCartOutlined style={{ fontSize: "140%", color: "black"}} />
+          <ShoppingCartOutlined style={{ fontSize: "140%", color: "black" }} />
         </Button>
         <Drawer
           title="Your Cart"
           placement="right"
           closable={false}
           onClose={onClose}
-          visible={visible}
+          visible={visibility}
           bodyStyle={{ paddingBottom: 80 }}
           footer={
             <div

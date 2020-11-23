@@ -2,6 +2,7 @@
 const UPDATE_CART_ITEMS_ADD = 'barkeep/cart/UPDATE_CART_ITEMS_ADD';
 const UPDATE_CART_ITEMS_REMOVE = 'barkeep/cart/UPDATE_CART_ITEMS_REMOVE';
 const MAKE_CART_CONCISE = 'barkeep/cart/MAKE_CART_CONCISE';
+const CART_VISIBILITY = 'barkeep/cart/CART_VISIBILITY';
 export interface ItemDetails {
     id: any,
     name: string,
@@ -14,7 +15,8 @@ export interface CartState {
 
 //INITIAL STATE
 const initialState = {
-    itemsInCart: []
+    itemsInCart: [],
+    showDrawer: false
 }
 
 //ACTION CREATORS
@@ -39,24 +41,41 @@ export function makeCartConcise(adjustedArray) {
     }
 }
 
+export function setCartVisibility(option) {
+    return {
+        type: CART_VISIBILITY,
+        payload: option
+    }
+}
+
 //REDUCER
 export default function reducer(state = initialState, action) {
     switch(action.type) {
         case UPDATE_CART_ITEMS_ADD :
             return {
+                ...state,
                 itemsInCart: [...state.itemsInCart, action.payload]
             }
         case UPDATE_CART_ITEMS_REMOVE :
             return {
+                ...state,
                 itemsInCart: state.itemsInCart.filter(
                     item => item.removedItem !== action.payload
                 )
             }
         case MAKE_CART_CONCISE:
             return {
+                ...state,
                 itemsInCart: [...action.payload]
             }
+        case CART_VISIBILITY:
+            return {
+                ...state,
+                showDrawer: action.payload
+            }
         default:
-            return state;
+            return {
+                ...state
+            }
     }
 }

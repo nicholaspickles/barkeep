@@ -33,10 +33,19 @@ export function createEntry(
   return newEntry;
 }
 const { TabPane } = Tabs;
+
 const cocktails = DrinkData.filter(drink => drink.type==="cocktail");
 const nonAl = DrinkData.filter(drink => drink.type==="non-alcoholic");
 
 const DisplayDrinks = ({ drinkList }) => {
+    const dispatch = useDispatch();
+    const handleAdd = (drinkId) => {
+        const drink = DrinkData[drinkId];
+        const {id, name, image } = drink;
+        const order = createEntry({id:id, quantity:1, image:image, name:name});
+        dispatch(addCartItems(order));
+    }
+
   return (
     <Row gutter={16}>
       {drinkList.map((drink) => (
@@ -57,7 +66,7 @@ const DisplayDrinks = ({ drinkList }) => {
             <br />
             {drink.price}
             <br />
-            <AddToCart type="primary" >Add to Bag</AddToCart>
+            <AddToCart type="primary" onClick={() => handleAdd(drink.id)}>Add to Bag</AddToCart>
           </Card>
         </Col>
       ))}
@@ -78,7 +87,6 @@ const Product = () => {
         </TabPane>
         <TabPane tab="Cocktails" key="2">
           <DisplayDrinks drinkList={cocktails} />
-          
         </TabPane>
         <TabPane tab="Non-alcoholic" key="3">
           <DisplayDrinks drinkList={nonAl} />
