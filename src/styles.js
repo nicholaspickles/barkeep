@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { Button } from 'antd';
 
 
 //HEADERS
@@ -102,4 +103,16 @@ export const StyledImage = styled.img`
     margin-left:auto;
     margin-right:auto;
     margin-bottom:auto;
+`
+
+//PRODUCTS
+
+export const AddToCart = styled(Button)`
+    background-color: #707F9C;
+    margin-top : 4px;
+    transition: all 0.5s;
+    &:hover {
+        background-color:#42C7F5;
+        transform:scale(1.1);
+    }
 `

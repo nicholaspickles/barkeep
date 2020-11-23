@@ -1,6 +1,7 @@
 import React from "react";
-import { Card, Tabs, Row, Col } from "antd";
+import { Card, Tabs, Row, Col, Button } from "antd";
 import "antd/dist/antd.css";
+import {AddToCart} from '../styles';
 
 import { ApplicationState } from "../redux/store";
 import {
@@ -32,21 +33,31 @@ export function createEntry(
   return newEntry;
 }
 const { TabPane } = Tabs;
+const cocktails = DrinkData.filter(drink => drink.type==="cocktail");
+const nonAl = DrinkData.filter(drink => drink.type==="non-alcoholic");
 
-const cocktails = DrinkData.map((drink) => {
-
-})
 const DisplayDrinks = ({ drinkList }) => {
   return (
     <Row gutter={16}>
       {drinkList.map((drink) => (
-        <Col span={8}>
-          <Card hoverable bordered={false} style={{ marginLeft:"9%", marginTop: "5%", textAlign:'center', width:'80%' }}>
-            <img src={drink.image} style={{maxHeight:200, maxWidth:200}} />
+        <Col span={6}>
+          <Card
+            hoverable
+            bordered={false}
+            style={{
+              marginLeft: "9%",
+              marginTop: "5%",
+              textAlign: "center",
+              width: "80%",
+            }}
+          >
+            <img src={drink.image} style={{ maxHeight: 200, maxWidth: 200, marginBottom:5 }} />
             <br />
             {drink.name}
             <br />
             {drink.price}
+            <br />
+            <AddToCart type="primary" >Add to Bag</AddToCart>
           </Card>
         </Col>
       ))}
@@ -65,12 +76,13 @@ const Product = () => {
         <TabPane tab="All" key="1">
           <DisplayDrinks drinkList={DrinkData} />
         </TabPane>
-        {/* <TabPane tab="Cocktails" key="2">
-          <DisplayDrinks drinkList={sampleData2} />
+        <TabPane tab="Cocktails" key="2">
+          <DisplayDrinks drinkList={cocktails} />
+          
         </TabPane>
         <TabPane tab="Non-alcoholic" key="3">
-          <DisplayDrinks drinkList={sampleData3} />
-        </TabPane> */}
+          <DisplayDrinks drinkList={nonAl} />
+        </TabPane>
       </Tabs>
     </div>
   );
@@ -90,21 +102,21 @@ export default Product;
             </div> */
 }
 
- //   const handleClick1 = () => {
-  //     const order = createEntry({
-  //       id: 1,
-  //       quantity: 1,
-  //       image: "imageLocation",
-  //       name: "silent poolz",
-  //     });
-  //     dispatch(addCartItems(order));
-  //   };
-  //   const handleClick2 = () => {
-  //     const order = createEntry({
-  //       id: 3,
-  //       quantity: 1,
-  //       image: "imageLocation",
-  //       name: "monkey shoulder",
-  //     });
-  //     dispatch(addCartItems(order));
-  //   };
+//   const handleClick1 = () => {
+//     const order = createEntry({
+//       id: 1,
+//       quantity: 1,
+//       image: "imageLocation",
+//       name: "silent poolz",
+//     });
+//     dispatch(addCartItems(order));
+//   };
+//   const handleClick2 = () => {
+//     const order = createEntry({
+//       id: 3,
+//       quantity: 1,
+//       image: "imageLocation",
+//       name: "monkey shoulder",
+//     });
+//     dispatch(addCartItems(order));
+//   };
