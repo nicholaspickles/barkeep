@@ -8,6 +8,7 @@ import Landing from "./Landing";
 import Products from "./Products";
 import About from "./About";
 import Contact from "./Contact";
+import Convert from './convertPage/Convert';
 
 const Main = () => {
   return (
@@ -20,6 +21,7 @@ const Main = () => {
             <Route exact path="/products" component={Products} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
+            <Route path="/convert" component={Convert} />
           </Switch>
         </div>
         <div>

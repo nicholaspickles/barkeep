@@ -2,7 +2,7 @@ import React from "react";
 
 import 'antd/dist/antd.css';
 import { Carousel } from "antd";
-import { AboutUsWrapper, AboutUsHeader, AboutUsText, Carouselh3, CarouselWrapper, StyledImage } from "../styles";
+import { GeneralWrapper, GeneralHeader, AboutUsText, Carouselh3, CarouselWrapper, StyledImage } from "../styles";
 
 import silentBack from '../localImages/whiteSilent.png';
 import monkeyBack from '../localImages/whiteMonkey.png';
@@ -10,7 +10,7 @@ import monkeyBack from '../localImages/whiteMonkey.png';
 
 const About = () => {
   return (
-    <AboutUsWrapper>
+    <GeneralWrapper>
       <Carousel autoplay autoplaySpeed={6000} speed = {1500} style={{marginBottom:'3%'}}>
           <CarouselWrapper>
             <Carouselh3><StyledImage src={silentBack} /></Carouselh3>
@@ -19,9 +19,9 @@ const About = () => {
             <Carouselh3><StyledImage src={monkeyBack} /></Carouselh3>
           </CarouselWrapper>
       </Carousel>
-      <AboutUsHeader>
+      <GeneralHeader>
         Bringing affordable, experimental cocktails for everyone.
-      </AboutUsHeader>
+      </GeneralHeader>
       <hr style={{ marginRight: "5%", marginLeft: "5%", marginBottom: "2%" }} />
       <h3 style={{ marginLeft: "2%", marginBottom: "2%", textAlign: "center" }}>
         This is a passion project from someone who likes their drinks.
@@ -43,7 +43,7 @@ const About = () => {
         experiment and feedback sessions help to ensure that the cocktails you
         get are to our standards.
       </AboutUsText>
-    </AboutUsWrapper>
+    </GeneralWrapper>
   );
 };
 

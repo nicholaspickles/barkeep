@@ -2,6 +2,14 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { Button } from 'antd';
 
+//GLOCAL 
+export const GeneralWrapper = styled.div`
+    margin-top: 5%;
+`
+
+export const GeneralHeader = styled.h1`
+    text-align: center;
+`
 
 //HEADERS
 export const HeaderLogo = styled(NavLink)`
@@ -69,13 +77,6 @@ export const Flower2 = styled.img`
 `
 
 //ABOUT
-export const AboutUsWrapper = styled.div`
-    margin-top: 5%;
-`
-export const AboutUsHeader = styled.h1`
-    text-align: center;
-`
-
 export const AboutUsText = styled.p`
     margin-left: 12%;
     margin-right:12%;

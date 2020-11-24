@@ -25,6 +25,9 @@ const Head = () => {
                 <NavLink to="/products">PRODUCTS</NavLink>
               </Menu.Item>
               <Menu.Item>
+                <NavLink to='/convert'>CONVERT YOUR BOTTLE</NavLink>
+              </Menu.Item>
+              <Menu.Item>
                 <NavLink to="/about">ABOUT BARKEEP</NavLink>
               </Menu.Item>
               <Menu.Item>
