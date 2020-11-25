@@ -1,6 +1,6 @@
 export const DrinkData = [
     {
-      "id": 0,
+      "_id": 0,
       "name": "Silent Pool Gin",
       "price": "$20",
       "image": "/assets/images/silentPool.png",
@@ -13,7 +13,7 @@ export const DrinkData = [
       "spiritType": "gin"
     },
     {
-      "id": 1,
+      "_id": 1,
       "name": "Monkey 47 Gin",
       "price": "$17",
       "image": "/assets/images/monkey47.png",
@@ -26,7 +26,7 @@ export const DrinkData = [
       "spiritType": "gin"
     },
     {
-      "id": 2,
+      "_id": 2,
       "name": "Bellewood Parms",
       "price": "$15",
       "image": "/assets/images/belleWood.png",
@@ -39,7 +39,7 @@ export const DrinkData = [
       "spiritType": "gin"
     },
     {
-      "id": 3,
+      "_id": 3,
       "name": "Silent Pool Mini",
       "price": "$10",
       "image": "/assets/images/miniPool.png",
@@ -52,7 +52,7 @@ export const DrinkData = [
       "spiritType": "gin"
     },
     {
-      "id": 4,
+      "_id": 4,
       "name": "McHenry Butterfly Gin",
       "price": "$50",
       "image": "/assets/images/mcHenry.png",
@@ -65,7 +65,7 @@ export const DrinkData = [
       "spiritType": "gin"
     },
     {
-      "id": 5,
+      "_id": 5,
       "name": "Alkemist Gin",
       "price": "$30",
       "image": "",
@@ -78,7 +78,7 @@ export const DrinkData = [
       "spiritType": "gin"
     },
     {
-      "id": 6,
+      "_id": 6,
       "name": "Pandan Syrup",
       "price": "$20",
       "image": "",
@@ -91,7 +91,7 @@ export const DrinkData = [
       "spiritType": "none"
     },
     {
-      "id": 7,
+      "_id": 7,
       "name": "Chrysanthemum Gin cocktail",
       "price": "$20",
       "image": "",
@@ -104,7 +104,7 @@ export const DrinkData = [
       "spiritType": "gin"
     },
     {
-      "id": 8,
+      "_id": 8,
       "name": "Milk clarified whisky sour",
       "price": "$20",
       "image": "",
@@ -117,7 +117,7 @@ export const DrinkData = [
       "spiritType": "whisky"
     },
     {
-      "id": 9,
+      "_id": 9,
       "name": "Fat washed bacon whisky",
       "price": "$20",
       "image": "",
@@ -130,7 +130,7 @@ export const DrinkData = [
       "spiritType": "whisky"
     },
     {
-      "id": 10,
+      "_id": 10,
       "name": "cinnamon whisky",
       "price": "$20",
       "image": "",

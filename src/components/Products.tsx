@@ -19,7 +19,7 @@ import noImage from "../localImages/noImage.png";
 export function createEntry(
   item: ItemDetails
 ): { id: number; quantity: number; image: any; name: string } {
-  let newEntry = { id: 1, quantity: 1, name: "default name", image: noImage };
+  let newEntry = { id: 0, quantity: 1, name: "default name", image: noImage };
   if (item.id) {
     newEntry.id = item.id;
   }
@@ -44,9 +44,9 @@ const DisplayDrinks = ({ drinkList }) => {
   const dispatch = useDispatch();
   const handleAdd = (drinkId) => {
     const drink = DrinkData[drinkId];
-    const { id, name, image } = drink;
+    const { _id, name, image } = drink;
     const order = createEntry({
-      id: id,
+      id: _id,
       quantity: 1,
       image: image,
       name: name,
@@ -57,7 +57,7 @@ const DisplayDrinks = ({ drinkList }) => {
       dispatch(setCartVisibility(true));
     } else {
       message.success({
-        content: `${order.quantity} x ${order.name} has been added to your bag.`,
+        content: `${order.quantity} x ${order.name} has been added to your bag. ${order.id}`,
         duration: 0.8,
         style: {
           marginTop: "40px",
@@ -89,7 +89,7 @@ const DisplayDrinks = ({ drinkList }) => {
               <br />
               {drink.price}
               <br />
-              <AddToCart type="primary" onClick={() => handleAdd(drink.id)}>
+              <AddToCart type="primary" onClick={() => handleAdd(drink._id)}>
                 Add to Bag
               </AddToCart>
             </Card>

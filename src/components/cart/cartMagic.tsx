@@ -1,5 +1,7 @@
 import React from "react";
 
+import { MiniImg } from "../../styles";
+import { Row, Col } from "antd";
 import { ApplicationState } from "../../redux/store";
 import { ItemDetails } from "../../redux/ducks/cart";
 import { useSelector } from "react-redux";
@@ -11,7 +13,6 @@ const CartContent = () => {
     (state: ApplicationState) => state.cart.itemsInCart
   );
   const finalArr: Array<ItemDetails> = [];
-
   var idArrays = ordered.map((x) => x.id);
   var orderBank = {};
   for (let i of idArrays) {
@@ -24,7 +25,7 @@ const CartContent = () => {
   for (const [key, value] of Object.entries(orderBank)) {
     finalArr.push(
       createEntry({
-        id: key,
+        id: DrinkData[key]._id,
         quantity: value,
         image: DrinkData[key].image,
         name: DrinkData[key].name,
@@ -36,9 +37,13 @@ const CartContent = () => {
     <div>
       {finalArr.length > 0 ? (
         finalArr.map((order) => (
-          <div key={order.id}>
-            {order.quantity} x {order.name}
-          </div>
+          <Row>
+            <div key={order.id}>
+              <Col>
+                <MiniImg src={order.image} /> &nbsp;{order.quantity} x {order.name}
+              </Col>
+            </div>
+          </Row>
         ))
       ) : (
         <div>Cart is empty</div>

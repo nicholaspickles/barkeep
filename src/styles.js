@@ -122,3 +122,9 @@ export const InstructionCard = styled(Card)`
     margin-left: 5%;
     border-radius: 20px;
 `
+
+//CART
+export const MiniImg = styled.img`
+    height: 50px;
+    width:auto;
+`
