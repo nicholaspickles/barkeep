@@ -3,11 +3,10 @@ const CONVERSION_ORDER_TYPE = 'barkeep/conversions/CONVERSION_ORDER_TYPE';
 const UPDATE_ORDER_DETAILS = 'barkeep/conversions/UPDATE_ORDER_DETAILS';
 
 export interface ConversionDetails {
-    id : any,
     conversiontype: string,
     spirit: string,
-    volume: number,
-    cocktail? : string,
+    volumes: [],
+    cocktail? : [],
     infusedWith? : string,
 }
 

@@ -9,7 +9,8 @@ export const DrinkData = [
       "image_3": "",
       "description": "My favorite silent pool gin",
       "strength": 3,
-      "type" : "cocktail"
+      "type" : "cocktail",
+      "spiritType": "gin"
     },
     {
       "id": 1,
@@ -21,7 +22,8 @@ export const DrinkData = [
       "image_3": "",
       "description": "my favorite Monkey 47 Gin",
       "strength": 3,
-      "type" : "cocktail"
+      "type" : "cocktail",
+      "spiritType": "gin"
     },
     {
       "id": 2,
@@ -33,7 +35,8 @@ export const DrinkData = [
       "image_3": "",
       "description": "Never tried this one but it looks really good",
       "strength": 3,
-      "type" : "cocktail"
+      "type" : "cocktail",
+      "spiritType": "gin"
     },
     {
       "id": 3,
@@ -45,7 +48,8 @@ export const DrinkData = [
       "image_3": "",
       "description": "a mini version of my favorite silent pool gin",
       "strength": 3,
-      "type" : "cocktail"
+      "type" : "cocktail",
+      "spiritType": "gin"
     },
     {
       "id": 4,
@@ -57,7 +61,8 @@ export const DrinkData = [
       "image_3": "",
       "description": "I never understood the point of butterfly pea or maybe its just the aesthetics",
       "strength": 2,
-      "type" : "cocktail"
+      "type" : "cocktail",
+      "spiritType": "gin"
     },
     {
       "id": 5,
@@ -69,7 +74,8 @@ export const DrinkData = [
       "image_3": "",
       "description": "tastes good with grapes and shit",
       "strength": 3,
-      "type" : "cocktail"
+      "type" : "cocktail",
+      "spiritType": "gin"
     },
     {
       "id": 6,
@@ -81,7 +87,8 @@ export const DrinkData = [
       "image_3": "",
       "description": "the pandan syrup is good with a lot of thing but expires quickly",
       "strength": 0,
-      "type" : "non-alcoholic"
+      "type" : "non-alcoholic",
+      "spiritType": "none"
     },
     {
       "id": 7,
@@ -93,7 +100,8 @@ export const DrinkData = [
       "image_3": "",
       "description": "the OG cocktail I made which I still don't know if it's good or not",
       "strength": 3,
-      "type" : "cocktail"
+      "type" : "cocktail",
+      "spiritType": "gin"
     },
     {
       "id": 8,
@@ -105,7 +113,8 @@ export const DrinkData = [
       "image_3": "",
       "description": "some experimental shit",
       "strength": 3,
-      "type" : "cocktail"
+      "type" : "cocktail",
+      "spiritType": "whisky"
     },
     {
       "id": 9,
@@ -117,7 +126,8 @@ export const DrinkData = [
       "image_3": "",
       "description": "more experiemental shit",
       "strength": 4,
-      "type" : "cocktail"
+      "type" : "cocktail",
+      "spiritType": "whisky"
     },
     {
       "id": 10,
@@ -129,6 +139,7 @@ export const DrinkData = [
       "image_3": "",
       "description": "this was good at the bar last time",
       "strength": 4,
-      "type" : "cocktail"
+      "type" : "cocktail",
+      "spiritType": "whisky"
     }
   ]
