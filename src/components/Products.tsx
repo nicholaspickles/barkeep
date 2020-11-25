@@ -57,7 +57,7 @@ const DisplayDrinks = ({ drinkList }) => {
       dispatch(setCartVisibility(true));
     } else {
       message.success({
-        content: `${order.quantity} x ${order.name} has been added to your bag. ${order.id}`,
+        content: `${order.quantity} x ${order.name} has been added to your bag.`,
         duration: 0.8,
         style: {
           marginTop: "40px",
