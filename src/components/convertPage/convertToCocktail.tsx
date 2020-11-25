@@ -14,9 +14,9 @@ import {
 
 const ConvertCocktailForm = () => {
   const [ttlVol, setTtlVol] = useState();
+  const [indieVols, setIndieVols] = useState([]);
   const [order, setOrder] = useState({
     spirit: "",
-    volumes: [],
     cocktail: [],
   });
   const dispatch = useDispatch();
@@ -30,30 +30,21 @@ const ConvertCocktailForm = () => {
   const handleChange = (type, e) => {
     setOrder((prevState) => ({ ...prevState, [type]: e }));
   };
-
-  const vols = {};
-  const handleChangeVolumes = (drinkSelected, e) => {
-    vols[`${drinkSelected}`] = e;
-  };
+  const handleChangeVolumes = (drink, e) => {
+    setIndieVols((prevState) => ({
+      ...prevState,
+      [drink] : e
+    }))
+  }
 
   const handleTotalVol = (e) => {
     setTtlVol(e);
   };
 
-  const makeOrder = () => {
-    const volList = [];
-    for (let [key,value] of Object.entries(vols)){
-      volList.push(`${key}: ${value}ml`);
-    }
-    setOrder((prevState) => ({
-      ...prevState,
-      volumes: [volList]
-    }))
-  }
 
   const onFinish = () => {
-    makeOrder();
     alert(JSON.stringify(order));
+    alert(JSON.stringify(indieVols));
   };
   const onFinishFailed = () => {
     console.log(order);
