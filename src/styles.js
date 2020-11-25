@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { Button } from 'antd';
+import { Button, Card } from 'antd';
 
 //GLOCAL 
 export const GeneralWrapper = styled.div`
     margin-top: 5%;
 `
-
 export const GeneralHeader = styled.h1`
     text-align: center;
 `
@@ -82,14 +81,12 @@ export const AboutUsText = styled.p`
     margin-right:12%;
     font-size:15px;
 `
-export const Carouselh3 = styled.h3`
-    height: 500px;
-    color: black;
-    background-color:white;
-    margin-right:10%;
-    margin-left:10%;
-    line-height: 160px;
-    text-align: center;
+export const StyledImage = styled.img`
+    display: block;
+    height:100%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:auto;
 `
 export const CarouselWrapper = styled.div`
     height: 500px;
@@ -98,12 +95,14 @@ export const CarouselWrapper = styled.div`
     align-items:center;
     justify-content:center;
 `
-export const StyledImage = styled.img`
-    display: block;
-    height:100%;
-    margin-left:auto;
-    margin-right:auto;
-    margin-bottom:auto;
+export const Carouselh3 = styled.h3`
+    height: 500px;
+    color: black;
+    background-color:white;
+    margin-right:10%;
+    margin-left:10%;
+    line-height: 160px;
+    text-align: center;
 `
 
 //PRODUCTS
@@ -116,4 +115,10 @@ export const AddToCart = styled(Button)`
         background-color:#42C7F5;
         transform:scale(1.1);
     }
+`
+//INSTRUCTIONS
+export const InstructionCard = styled(Card)`
+    height: 120%;
+    margin-left: 5%;
+    border-radius: 20px;
 `
