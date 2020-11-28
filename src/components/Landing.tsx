@@ -19,7 +19,7 @@ const Landing = () => {
           <h1 style={{ textAlign: "center" }}>
             <img
               src={landingFlower}
-              style={{ height: "600px", width: "auto" }}
+              style={{ height: "650px", width: "auto" }}
             />
           </h1>
         </Col>

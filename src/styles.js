@@ -17,16 +17,19 @@ export const GeneralBody = styled.p`
 
 //LANDING
 export const LandingButton = styled(Button)`
-    border-radius: 10px;
+    border-radius: 5px;
+    border-color:#3E3F5A;
     height: 50px;
-    width: auto;
-    background-color: #9992E0;
+    width: 150px;
+    background-color: #3E3F5A;
+    color:white;
 
     &:hover{
         height:55px;
+        width:160px;
         background-color: #BECAFF;
         color:black;
-        transition:0.8s;
+        transition:0.5s;
     }
 `
 
