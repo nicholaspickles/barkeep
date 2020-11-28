@@ -33,14 +33,13 @@ const ConvertCocktailForm = () => {
   const handleChangeVolumes = (drink, e) => {
     setIndieVols((prevState) => ({
       ...prevState,
-      [drink] : e
-    }))
-  }
+      [drink]: e,
+    }));
+  };
 
   const handleTotalVol = (e) => {
     setTtlVol(e);
   };
-
 
   const onFinish = () => {
     alert(JSON.stringify(order));

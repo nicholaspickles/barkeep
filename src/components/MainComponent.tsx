@@ -8,14 +8,14 @@ import Landing from "./Landing";
 import Products from "./Products";
 import About from "./About";
 import Contact from "./Contact";
-import Convert from './convertPage/Convert';
+import Convert from "./convertPage/Convert";
 
 const Main = () => {
   return (
     <div>
       <Router>
         <Head />
-        <div className="body" style={{height:'100%', minHeight:'100%'}}>
+        <div className="body" style={{ height: "100%", minHeight: "100%" }}>
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/products" component={Products} />

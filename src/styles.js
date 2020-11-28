@@ -9,6 +9,11 @@ export const GeneralWrapper = styled.div`
 export const GeneralHeader = styled.h1`
     text-align: center;
 `
+export const GeneralBody = styled.p`
+    margin-left: 12%;
+    margin-right:12%;
+    font-size:15px;
+`
 
 //HEADERS
 export const HeaderLogo = styled(NavLink)`
@@ -76,11 +81,6 @@ export const Flower2 = styled.img`
 `
 
 //ABOUT
-export const AboutUsText = styled.p`
-    margin-left: 12%;
-    margin-right:12%;
-    font-size:15px;
-`
 export const StyledImage = styled.img`
     display: block;
     height:100%;
