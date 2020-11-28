@@ -18,6 +18,7 @@ import {
 import "antd/dist/antd.css";
 import cutflower1 from "../localImages/cutflower1.png";
 import cutflower2 from "../localImages/cutflower2.png";
+import newFlowa from "../localImages/newFlowa.png";
 
 const { Footer } = Layout;
 
@@ -144,7 +145,7 @@ const Foot = () => {
               <Flower1 src={cutflower1} />
             </Col>
             <Col span={12} push={1}>
-              <Flower2 src={cutflower2}/>
+              <Flower2 src={newFlowa} />
             </Col>
           </Row>
         </div>

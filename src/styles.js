@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { Button, Card } from 'antd';
 
-//GLOCAL 
+//GLOBAL 
 export const GeneralWrapper = styled.div`
     margin-top: 5%;
 `
@@ -14,6 +14,22 @@ export const GeneralBody = styled.p`
     margin-right:12%;
     font-size:15px;
 `
+
+//LANDING
+export const LandingButton = styled(Button)`
+    border-radius: 10px;
+    height: 50px;
+    width: auto;
+    background-color: #9992E0;
+
+    &:hover{
+        height:55px;
+        background-color: #BECAFF;
+        color:black;
+        transition:0.8s;
+    }
+`
+
 
 //HEADERS
 export const HeaderLogo = styled(NavLink)`
