@@ -26,7 +26,13 @@ const TransformLiquorForm = () => {
   };
 
   return (
-    <GeneralWrapper>
+    <GeneralWrapper style={{ marginTop: "2%" }}>
+      <p style={{ marginBottom: "3%", color: "#BFBFBF", fontSize: "12px" }}>
+        This is the option for when you want to change your bottle into a a
+        flavored spirit (eg: Chrysanthemum gin, pandan vodka) for you to make
+        into cocktails later. A list of these options can also be found{" "}
+        <a href="/products">here.</a>
+      </p>
       <Form
         layout="horizontal"
         labelCol={{ span: 4 }}
@@ -45,15 +51,18 @@ const TransformLiquorForm = () => {
             <Select.Option value="whisky">Whisky</Select.Option>
           </Select>
         </Form.Item>
-        <Form.Item label = "Infusers" extra="Selecting multiple will result in 3 different infusions, not 1 infusion with 3 ingredients.">
+        <Form.Item
+          label="Infusers"
+          extra="Selecting multiple will result in 3 different infusions, not 1 infusion with 3 ingredients."
+        >
           <Select
             placeholder="Select what you want to infuse with"
             mode="multiple"
             onChange={(e) => handleChange("infusers", e)}
           >
-              <Select.Option value="pandan">Pandan</Select.Option>
-              <Select.Option value="chrysanthemum">Chrysanthemum</Select.Option>
-              <Select.Option value="sourPlum">Sour Plum</Select.Option>
+            <Select.Option value="pandan">Pandan</Select.Option>
+            <Select.Option value="chrysanthemum">Chrysanthemum</Select.Option>
+            <Select.Option value="sourPlum">Sour Plum</Select.Option>
           </Select>
         </Form.Item>
         <Form.Item>

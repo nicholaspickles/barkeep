@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Input, InputNumber, Select, Button } from "antd";
-import { GeneralWrapper, GeneralHeader } from "../../styles";
+import { GeneralWrapper, GeneralHeader, GeneralBody } from "../../styles";
 import { DrinkData } from "../../shared/products";
 
 //REDUX
@@ -50,7 +50,12 @@ const ConvertCocktailForm = () => {
   };
 
   return (
-    <GeneralWrapper>
+    <GeneralWrapper style={{ marginTop: "2%" }}>
+      <p style={{ marginBottom: "3%", color: "#BFBFBF", fontSize: "12px" }}>
+        This is the option for when you want to change your bottle into a
+        cocktail that is listed in out menu, which you can view{" "}
+        <a href="/products">here.</a>
+      </p>
       <Form
         layout="horizontal"
         labelCol={{ span: 4 }}
