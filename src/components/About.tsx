@@ -20,7 +20,7 @@ const About = () => {
       <Carousel
         autoplay
         pauseOnHover={false}
-        autoplaySpeed={6000}
+        autoplaySpeed={4000}
         speed={1500}
         style={{ marginBottom: "3%" }}
       >

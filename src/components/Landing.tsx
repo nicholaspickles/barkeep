@@ -1,9 +1,9 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-import { Row, Col, Button } from "antd";
+import { Row, Col } from "antd";
 import { RightOutlined } from "@ant-design/icons";
-import { GeneralWrapper, GeneralHeader, LandingButton } from "../styles";
+import { GeneralHeader, LandingButton } from "../styles";
 import landingFlower from "../localImages/flowa-01.png";
 
 const Landing = () => {
