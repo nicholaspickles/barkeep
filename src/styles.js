@@ -8,6 +8,7 @@ export const GeneralWrapper = styled.div`
 `
 export const GeneralHeader = styled.h1`
     text-align: center;
+    font-family:moonlight;
 `
 export const GeneralBody = styled.p`
     margin-left: 12%;
@@ -32,7 +33,6 @@ export const LandingButton = styled(Button)`
         transition:0.5s;
     }
 `
-
 
 //HEADERS
 export const HeaderLogo = styled(NavLink)`
