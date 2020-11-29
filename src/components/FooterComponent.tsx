@@ -60,7 +60,7 @@ const FollowUs = () => {
           <InstagramOutlined style={{ color: "white" }} />
         </a>
         <a
-          href="https://www.github.com/NicholasKSK"
+          href="https://www.github.com/nicholaspickles"
           target="_blank"
           rel="noreferrer"
         >
