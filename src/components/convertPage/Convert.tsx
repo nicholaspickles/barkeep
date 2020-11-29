@@ -18,7 +18,12 @@ const Convert = () => {
       <br />
       <Tabs
         defaultActiveKey="1"
-        style={{ marginLeft: "10%", marginRight: "5%", marginBottom: "10%" }}
+        style={{
+          marginLeft: "10%",
+          marginRight: "5%",
+          marginBottom: "10%",
+          marginTop: "6%",
+        }}
       >
         <TabPane tab="Convert to Cocktail" key="1">
           <ConvertCocktailForm />

@@ -16,10 +16,17 @@ const Landing = () => {
     <div>
       <Row>
         <Col span={12} style={{ marginTop: "2%" }}>
-          <h1 style={{ textAlign: "center" }}>
+          <h1
+            style={{
+              textAlign: "center",
+              maxHeight: "650px",
+              height: "auto",
+              width: "auto",
+            }}
+          >
             <img
               src={landingFlower}
-              style={{ height: "650px", width: "auto" }}
+              style={{ maxHeight: "650px", height: "auto", width: "auto" }}
             />
           </h1>
         </Col>
