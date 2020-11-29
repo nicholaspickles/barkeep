@@ -69,7 +69,7 @@ const DisplayDrinks = ({ drinkList }) => {
     <div>
       <Row gutter={16}>
         {drinkList.map((drink) => (
-          <Col span={6}>
+          <Col xs={12} xl={8}>
             <Card
               hoverable
               bordered={false}
@@ -78,6 +78,7 @@ const DisplayDrinks = ({ drinkList }) => {
                 marginTop: "5%",
                 textAlign: "center",
                 width: "80%",
+                height: "auto",
               }}
             >
               <img

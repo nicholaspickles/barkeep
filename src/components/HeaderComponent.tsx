@@ -2,7 +2,7 @@ import React from "react";
 import { Layout, Menu } from "antd";
 import { NavLink } from "react-router-dom";
 
-import CartDrawer from './cart/Cart';
+import CartDrawer from "./cart/Cart";
 
 //AESTHETICS IMPORT
 import "antd/dist/antd.css";
@@ -25,7 +25,7 @@ const Head = () => {
                 <NavLink to="/products">PRODUCTS</NavLink>
               </Menu.Item>
               <Menu.Item>
-                <NavLink to='/convert'>CONVERT YOUR BOTTLE</NavLink>
+                <NavLink to="/convert">CONVERT YOUR BOTTLE</NavLink>
               </Menu.Item>
               <Menu.Item>
                 <NavLink to="/about">ABOUT BARKEEP</NavLink>
