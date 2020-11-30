@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { Button, Card } from 'antd';
+import { Button, Card, InputNumber } from 'antd';
 
 //GLOBAL 
 export const GeneralWrapper = styled.div`
@@ -146,4 +146,25 @@ export const InstructionCard = styled(Card)`
 export const MiniImg = styled.img`
     height: 50px;
     width:auto;
+`
+
+//INDIE PRODUCTS
+export const AddToCartButton = styled(Button)`
+    margin-top: 5%;
+    background-color: #5C5C5C;
+    border-color:#5C5C5C;
+    border-radius:5px;
+    &:hover {
+        background-color:#7D707D;
+        transition:0.8s;
+    }
+`
+
+export const InputNumberProducts = styled(InputNumber)`
+    min-width:50px;
+    width:15%;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom-color:#707070;
 `

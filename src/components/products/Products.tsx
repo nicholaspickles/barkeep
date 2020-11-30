@@ -68,22 +68,22 @@ const DisplayDrinks = ({ drinkList }) => {
   };
 
   return (
-    <div>
+    <div style={{ marginBottom: "3%" }}>
       <Row gutter={16}>
         {drinkList.map((drink) => (
           <Col xs={12} xl={8}>
-            <Link to={`/products/${drink._id}`}>
-              <Card
-                hoverable
-                bordered={false}
-                style={{
-                  marginLeft: "9%",
-                  marginTop: "5%",
-                  textAlign: "center",
-                  width: "80%",
-                  height: "auto",
-                }}
-              >
+            <Card
+              hoverable
+              bordered={false}
+              style={{
+                marginLeft: "9%",
+                marginTop: "5%",
+                textAlign: "center",
+                width: "80%",
+                height: "auto",
+              }}
+            >
+              <Link to={`/products/${drink._id}`} style={{ color: "black" }}>
                 <img
                   src={drink.image}
                   style={{ maxHeight: 200, maxWidth: 200, marginBottom: 5 }}
@@ -93,11 +93,11 @@ const DisplayDrinks = ({ drinkList }) => {
                 <br />
                 {drink.price}
                 <br />
-                <AddToCart type="primary" onClick={() => handleAdd(drink._id)}>
-                  Add to Bag
-                </AddToCart>
-              </Card>
-            </Link>
+              </Link>
+              <AddToCart type="primary" onClick={() => handleAdd(drink._id)}>
+                Add to Bag
+              </AddToCart>
+            </Card>
           </Col>
         ))}
       </Row>
