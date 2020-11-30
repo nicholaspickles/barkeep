@@ -7,6 +7,7 @@ import { Button, Col, Row, Breadcrumb } from "antd";
 import { ShopOutlined } from "@ant-design/icons";
 
 import DescriptionCard from "./description";
+import ProductImages from "./productImages";
 import Product from "./Products";
 
 const IndividualProduct = ({ product }) => {
@@ -23,13 +24,9 @@ const IndividualProduct = ({ product }) => {
         </Breadcrumb.Item>
         <Breadcrumb.Item>{product.name}</Breadcrumb.Item>
       </Breadcrumb>
-      <GeneralHeader>Hello, {product.name}</GeneralHeader>
       <Row>
-        <Col span={8}>
-          <h1>other images</h1>
-        </Col>
-        <Col xs={24} xl={8}>
-          <h1>main image</h1>
+        <Col xs={24} xl={16}>
+          <ProductImages product={product} />
         </Col>
         <Col xs={24} xl={8}>
           <DescriptionCard product={product} />

@@ -168,3 +168,8 @@ export const InputNumberProducts = styled(InputNumber)`
     border-right:none;
     border-bottom-color:#707070;
 `
+
+export const SideImages = styled.img`
+    height: 191px;
+    width:auto;
+`
