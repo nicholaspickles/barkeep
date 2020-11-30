@@ -19,8 +19,14 @@ import noImage from "../../localImages/noImage.png";
 
 export function createEntry(
   item: ItemDetails
-): { id: number; quantity: number; image: any; name: string } {
-  let newEntry = { id: 0, quantity: 1, name: "default name", image: noImage };
+): { id: number; quantity: number; image: any; name: string; price: number } {
+  let newEntry = {
+    id: 0,
+    quantity: 1,
+    name: "default name",
+    image: noImage,
+    price: 0,
+  };
   if (item.id) {
     newEntry.id = item.id;
   }
@@ -32,6 +38,9 @@ export function createEntry(
   }
   if (item.name) {
     newEntry.name = item.name;
+  }
+  if (item.price) {
+    newEntry.price = item.price;
   }
   return newEntry;
 }
@@ -45,12 +54,13 @@ const DisplayDrinks = ({ drinkList }) => {
   const dispatch = useDispatch();
   const handleAdd = (drinkId) => {
     const drink = DrinkData[drinkId];
-    const { _id, name, image } = drink;
+    const { _id, name, image, price } = drink;
     const order = createEntry({
       id: _id,
       quantity: 1,
       image: image,
       name: name,
+      price: price,
     });
     dispatch(addCartItems(order));
     if (alerted === "no") {
@@ -90,8 +100,7 @@ const DisplayDrinks = ({ drinkList }) => {
                 />
                 <br />
                 {drink.name}
-                <br />
-                {drink.price}
+                <br />${drink.price}
                 <br />
               </Link>
               <AddToCart type="primary" onClick={() => handleAdd(drink._id)}>

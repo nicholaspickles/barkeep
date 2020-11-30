@@ -29,6 +29,7 @@ const CartContent = () => {
         quantity: value,
         image: DrinkData[key].image,
         name: DrinkData[key].name,
+        price: DrinkData[key].price,
       })
     );
   }

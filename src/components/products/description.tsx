@@ -19,12 +19,13 @@ const DescriptionCard = ({ product }) => {
 
   const handleAddToCart = (drinkId) => {
     const drink = DrinkData[drinkId];
-    const { _id, name, image } = drink;
+    const { _id, name, image, price } = drink;
     const order = createEntry({
       id: _id,
       quantity: 1,
       image: image,
       name: name,
+      price: price,
     });
     for (var i = 0; i < itemQuantity; i++) {
       dispatch(addCartItems(order));

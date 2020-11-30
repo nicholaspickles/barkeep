@@ -50,7 +50,7 @@ const ProductImages = ({ product }) => {
 
   return (
     <>
-      <Row>
+      <Row style={{ marginBottom: "15%" }}>
         <Col flex={2}>
           <SideImages />
         </Col>

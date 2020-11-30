@@ -13,7 +13,12 @@ const CartDrawer = () => {
   const numInCart = cart.reduce(function (acc, cur) {
     return acc + cur.quantity;
   }, 0);
-  const visibility = useSelector((state:ApplicationState) => state.cart.showDrawer);
+  const cartTotal = cart.reduce(function (acc, cur) {
+    return acc + cur.price;
+  }, 0);
+  const visibility = useSelector(
+    (state: ApplicationState) => state.cart.showDrawer
+  );
   const dispatch = useDispatch();
   const showDrawer = () => {
     dispatch(setCartVisibility(true));
@@ -21,6 +26,7 @@ const CartDrawer = () => {
   const onClose = () => {
     dispatch(setCartVisibility(false));
   };
+
   return (
     <>
       <Badge
@@ -47,6 +53,7 @@ const CartDrawer = () => {
                 textAlign: "right",
               }}
             >
+              <p>Cart Total: ${cartTotal}</p>
               <Button onClick={onClose} style={{ marginRight: 8 }}>
                 Close
               </Button>
