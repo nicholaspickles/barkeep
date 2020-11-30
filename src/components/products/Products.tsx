@@ -1,20 +1,21 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { Card, Tabs, Row, Col, Button, message } from "antd";
 import "antd/dist/antd.css";
-import { AddToCart } from "../styles";
+import { AddToCart } from "../../styles";
 
-import { ApplicationState } from "../redux/store";
+import { ApplicationState } from "../../redux/store";
 import {
   addCartItems,
   ItemDetails,
   removeCartItems,
   setCartVisibility,
-} from "../redux/ducks/cart";
+} from "../../redux/ducks/cart";
 import { useDispatch, useSelector } from "react-redux";
 
-import { DrinkData } from "../shared/products";
-import noImage from "../localImages/noImage.png";
+import { DrinkData } from "../../shared/products";
+import noImage from "../../localImages/noImage.png";
 
 export function createEntry(
   item: ItemDetails
@@ -65,35 +66,38 @@ const DisplayDrinks = ({ drinkList }) => {
       });
     }
   };
+
   return (
     <div>
       <Row gutter={16}>
         {drinkList.map((drink) => (
           <Col xs={12} xl={8}>
-            <Card
-              hoverable
-              bordered={false}
-              style={{
-                marginLeft: "9%",
-                marginTop: "5%",
-                textAlign: "center",
-                width: "80%",
-                height: "auto",
-              }}
-            >
-              <img
-                src={drink.image}
-                style={{ maxHeight: 200, maxWidth: 200, marginBottom: 5 }}
-              />
-              <br />
-              {drink.name}
-              <br />
-              {drink.price}
-              <br />
-              <AddToCart type="primary" onClick={() => handleAdd(drink._id)}>
-                Add to Bag
-              </AddToCart>
-            </Card>
+            <Link to={`/products/${drink._id}`}>
+              <Card
+                hoverable
+                bordered={false}
+                style={{
+                  marginLeft: "9%",
+                  marginTop: "5%",
+                  textAlign: "center",
+                  width: "80%",
+                  height: "auto",
+                }}
+              >
+                <img
+                  src={drink.image}
+                  style={{ maxHeight: 200, maxWidth: 200, marginBottom: 5 }}
+                />
+                <br />
+                {drink.name}
+                <br />
+                {drink.price}
+                <br />
+                <AddToCart type="primary" onClick={() => handleAdd(drink._id)}>
+                  Add to Bag
+                </AddToCart>
+              </Card>
+            </Link>
           </Col>
         ))}
       </Row>

@@ -5,7 +5,7 @@ import { Row, Col } from "antd";
 import { ApplicationState } from "../../redux/store";
 import { ItemDetails } from "../../redux/ducks/cart";
 import { useSelector } from "react-redux";
-import { createEntry } from "../Products";
+import { createEntry } from "../products/Products";
 import { DrinkData } from "../../shared/products";
 
 const CartContent = () => {
@@ -40,7 +40,8 @@ const CartContent = () => {
           <Row>
             <div key={order.id}>
               <Col>
-                <MiniImg src={order.image} /> &nbsp;{order.quantity} x {order.name}
+                <MiniImg src={order.image} /> &nbsp;{order.quantity} x{" "}
+                {order.name}
               </Col>
             </div>
           </Row>
