@@ -39,12 +39,17 @@ const CartContent = () => {
       {finalArr.length > 0 ? (
         finalArr.map((order) => (
           <Row>
-            <div key={order.id}>
-              <Col>
-                <MiniImg src={order.image} /> &nbsp;{order.quantity} x{" "}
-                {order.name}
-              </Col>
-            </div>
+            <Col flex={1}>
+              <MiniImg src={order.image} />
+            </Col>
+            <Col flex={3}>
+              <Row>
+                {order.quantity} x {order.name}
+              </Row>
+              <Row>
+                <p style={{ float: "right" }}>${order.price}</p>
+              </Row>
+            </Col>
           </Row>
         ))
       ) : (
