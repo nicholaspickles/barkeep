@@ -15,6 +15,11 @@ export const GeneralBody = styled.p`
     margin-right:12%;
     font-size:15px;
 `
+export const UnderlineP = styled.p`
+    &:hover {
+        text-decoration: underline
+    }
+`
 
 //LANDING
 export const LandingButton = styled(Button)`
@@ -146,6 +151,14 @@ export const InstructionCard = styled(Card)`
 export const MiniImg = styled.img`
     height: 50px;
     width:auto;
+`
+
+export const RemoveButton = styled(Button)`
+
+    &:hover {
+        border-color: red;
+        color: red;
+    }
 `
 
 //INDIE PRODUCTS

@@ -23,7 +23,7 @@ const initialState = {
 //ACTION CREATORS
 export function addCartItems(additionalItem: ItemDetails) {
   return {
-    type: UPDATE_CART_ITEMS_ADD,
+    type: UPDATE_CART_ITEMS_REMOVE,
     payload: additionalItem,
   };
 }
@@ -60,6 +60,7 @@ export default function reducer(state = initialState, action) {
     case UPDATE_CART_ITEMS_REMOVE:
       return {
         ...state,
+        //change logic so that it pushed it out of the dictionary?
         itemsInCart: state.itemsInCart.filter(
           (item) => item.removedItem !== action.payload
         ),

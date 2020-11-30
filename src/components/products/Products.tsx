@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { Card, Tabs, Row, Col, Button, message } from "antd";
 import "antd/dist/antd.css";
-import { AddToCart } from "../../styles";
+import { AddToCart, UnderlineP } from "../../styles";
 
 import { ApplicationState } from "../../redux/store";
 import {
@@ -99,9 +99,9 @@ const DisplayDrinks = ({ drinkList }) => {
                   style={{ maxHeight: 200, maxWidth: 200, marginBottom: 5 }}
                 />
                 <br />
-                {drink.name}
-                <br />${drink.price}
-                <br />
+                <UnderlineP style={{ margin: "0", padding: "5px" }}>
+                  {drink.name} <br /> ${drink.price}
+                </UnderlineP>
               </Link>
               <AddToCart type="primary" onClick={() => handleAdd(drink._id)}>
                 Add to Bag

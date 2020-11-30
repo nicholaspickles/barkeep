@@ -47,6 +47,7 @@ const CartDrawer = () => {
           onClose={onClose}
           visible={visibility}
           bodyStyle={{ paddingBottom: 80 }}
+          width={350}
           footer={
             <div
               style={{
