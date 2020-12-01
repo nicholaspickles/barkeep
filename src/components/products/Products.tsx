@@ -5,13 +5,12 @@ import { Card, Tabs, Row, Col, message } from "antd";
 import "antd/dist/antd.css";
 import { AddToCart, UnderlineP } from "../../styles";
 
-import { ApplicationState } from "../../redux/store";
 import {
   addCartItems,
   ItemDetails,
   setCartVisibility,
 } from "../../redux/ducks/cart";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { DrinkData } from "../../shared/products";
 import noImage from "../../localImages/noImage.png";
@@ -114,11 +113,6 @@ const DisplayDrinks = ({ drinkList }) => {
 };
 
 const Product = () => {
-  const dispatch = useDispatch();
-  const items = useSelector(
-    (state: ApplicationState) => state.cart.itemsInCart
-  );
-
   return (
     <div>
       <Tabs

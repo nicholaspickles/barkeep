@@ -1,12 +1,12 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 
 import { MiniImg, RemoveButton } from "../../styles";
 import { Row, Col } from "antd";
 
 //REDUX
 import { ApplicationState } from "../../redux/store";
-import { ItemDetails, removeCartItems } from "../../redux/ducks/cart";
-import { useSelector, useDispatch } from "react-redux";
+import { ItemDetails } from "../../redux/ducks/cart";
+import { useSelector } from "react-redux";
 import { createEntry } from "../products/Products";
 import { DrinkData } from "../../shared/products";
 
