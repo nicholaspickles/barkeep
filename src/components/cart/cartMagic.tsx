@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 
 import { MiniImg, RemoveButton } from "../../styles";
 import { Row, Col } from "antd";
@@ -11,7 +11,7 @@ import { createEntry } from "../products/Products";
 import { DrinkData } from "../../shared/products";
 
 const CartContent = () => {
-  const dispatch = useDispatch();
+  const [update, forceUpdate] = useState(0);
   const ordered = useSelector(
     (state: ApplicationState) => state.cart.itemsInCart
   );
@@ -38,10 +38,9 @@ const CartContent = () => {
   }
 
   const handleRemoveItem = (id) => {
-    console.log("first:", ordered);
     var idx = ordered.findIndex((drink) => drink._id == id);
     ordered.splice(idx, 1);
-    console.log("new", ordered);
+    forceUpdate(() => update + 1);
   };
 
   return (
