@@ -38,7 +38,10 @@ const CartContent = () => {
   }
 
   const handleRemoveItem = (id) => {
-    dispatch(removeCartItems(id));
+    console.log("first:", ordered);
+    var idx = ordered.findIndex((drink) => drink._id == id);
+    ordered.splice(idx, 1);
+    console.log("new", ordered);
   };
 
   return (

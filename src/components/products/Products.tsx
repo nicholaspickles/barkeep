@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { Card, Tabs, Row, Col, Button, message } from "antd";
+import { Card, Tabs, Row, Col, message } from "antd";
 import "antd/dist/antd.css";
 import { AddToCart, UnderlineP } from "../../styles";
 
@@ -9,7 +9,6 @@ import { ApplicationState } from "../../redux/store";
 import {
   addCartItems,
   ItemDetails,
-  removeCartItems,
   setCartVisibility,
 } from "../../redux/ducks/cart";
 import { useDispatch, useSelector } from "react-redux";

@@ -23,14 +23,14 @@ const initialState = {
 //ACTION CREATORS
 export function addCartItems(additionalItem: ItemDetails) {
   return {
-    type: UPDATE_CART_ITEMS_REMOVE,
+    type: UPDATE_CART_ITEMS_ADD,
     payload: additionalItem,
   };
 }
 
 export function removeCartItems(removedItem: ItemDetails) {
   return {
-    type: UPDATE_CART_ITEMS_ADD,
+    type: UPDATE_CART_ITEMS_REMOVE,
     payload: removedItem,
   };
 }
