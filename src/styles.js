@@ -5,6 +5,7 @@ import { Button, Card, InputNumber } from 'antd';
 //GLOBAL 
 export const GeneralWrapper = styled.div`
     margin-top: 5%;
+    width:100%
 `
 export const GeneralHeader = styled.h1`
     text-align: center;
@@ -133,10 +134,13 @@ export const Carouselh3 = styled.h3`
 
 export const AddToCart = styled(Button)`
     background-color: #707F9C;
+    border-radius: 5px;
+    color:white;
     margin-top : 4px;
     transition: all 0.5s;
     &:hover {
         background-color:#42C7F5;
+        color:white;
         transform:scale(1.1);
     }
 `
@@ -184,5 +188,11 @@ export const InputNumberProducts = styled(InputNumber)`
 
 export const SideImages = styled.img`
     height: 191px;
+    width:auto;
+`
+
+//CHECKOUT
+export const CheckoutImage = styled.img`
+    height:50px;
     width:auto;
 `
