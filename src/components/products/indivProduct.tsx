@@ -1,14 +1,12 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-import { GeneralWrapper, GeneralHeader } from "../../styles";
-import { Button, Col, Row, Breadcrumb } from "antd";
+import { Col, Row, Breadcrumb } from "antd";
 
 import { ShopOutlined } from "@ant-design/icons";
 
 import DescriptionCard from "./description";
 import ProductImages from "./productImages";
-import Product from "./Products";
 
 const IndividualProduct = ({ product }) => {
   const history = useHistory();
