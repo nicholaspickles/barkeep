@@ -1,14 +1,20 @@
-import React from "react";
-import { Badge, Button, Drawer } from "antd";
+import React, { useState } from "react";
+import { Badge, Button, Drawer, Tooltip } from "antd";
 import CartContent from "./cartMagic";
 
 import { ApplicationState } from "../../redux/store";
 import { useSelector, useDispatch } from "react-redux";
 import { setCartVisibility } from "../../redux/ducks/cart";
 
-import { ShoppingCartOutlined, RightOutlined } from "@ant-design/icons";
+import {
+  ShoppingCartOutlined,
+  RightOutlined,
+  RedoOutlined,
+} from "@ant-design/icons";
 
 const CartDrawer = () => {
+  const [update, forceUpdate] = useState(0);
+
   const cart = useSelector((state: ApplicationState) => state.cart.itemsInCart);
   const numInCart = cart.reduce(function (acc, cur) {
     return acc + cur.quantity;
@@ -25,6 +31,10 @@ const CartDrawer = () => {
   };
   const onClose = () => {
     dispatch(setCartVisibility(false));
+  };
+
+  const handleRefresh = () => {
+    forceUpdate(() => update + 1);
   };
 
   return (
@@ -54,7 +64,16 @@ const CartDrawer = () => {
                 textAlign: "right",
               }}
             >
-              <p>Cart Total: ${cartTotal}</p>
+              <Tooltip title="refresh cart" color={" #707F9C"}>
+                <Button onClick={handleRefresh} style={{ float: "left" }}>
+                  <RedoOutlined />
+                </Button>
+              </Tooltip>
+              <span style={{ marginRight: "2vh" }}>
+                Cart Total: ${cartTotal}
+              </span>
+              <br />
+              <br />
               <Button onClick={onClose} style={{ marginRight: 8 }}>
                 Close
               </Button>
