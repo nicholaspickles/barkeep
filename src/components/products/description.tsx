@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Row, Col, Card, message } from "antd";
+import { Card, message } from "antd";
 
 import { AddToCartButton, InputNumberProducts } from "../../styles";
-import { createEntry } from "./Products";
+import { createEntry } from "../../shared/helperFunctions";
 import { DrinkData } from "../../shared/products";
 
 //REDUX
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addCartItems } from "../../redux/ducks/cart";
 
 const DescriptionCard = ({ product }) => {

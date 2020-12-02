@@ -35,6 +35,7 @@ const CartDrawer = () => {
   };
   const onCheckout = () => {
     history.push("/checkout");
+    dispatch(setCartVisibility(false));
   };
 
   const handleRefresh = () => {

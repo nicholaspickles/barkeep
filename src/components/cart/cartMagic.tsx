@@ -1,42 +1,19 @@
 import React, { useState } from "react";
+import { makeNeat } from "../../shared/helperFunctions";
 
 import { MiniImg, RemoveButton } from "../../styles";
 import { Row, Col } from "antd";
 
 //REDUX
 import { ApplicationState } from "../../redux/store";
-import { ItemDetails } from "../../redux/ducks/cart";
 import { useSelector } from "react-redux";
-import { createEntry } from "../products/Products";
-import { DrinkData } from "../../shared/products";
 
 const CartContent = () => {
   const [update, forceUpdate] = useState(0);
   const ordered = useSelector(
     (state: ApplicationState) => state.cart.itemsInCart
   );
-  const finalArr: Array<ItemDetails> = [];
-  var idArrays = ordered.map((x) => x.id);
-  var orderBank = {};
-  for (let i of idArrays) {
-    if (i in orderBank) {
-      orderBank[i] += 1;
-    } else {
-      orderBank[i] = 1;
-    }
-  }
-  for (const [key, value] of Object.entries(orderBank)) {
-    finalArr.push(
-      createEntry({
-        id: DrinkData[key]._id,
-        quantity: value,
-        image: DrinkData[key].image,
-        name: DrinkData[key].name,
-        price: DrinkData[key].price,
-      })
-    );
-  }
-
+  const finalArr = makeNeat(ordered);
   const handleRemoveItem = (id) => {
     var idx = ordered.findIndex((drink) => drink._id == id);
     ordered.splice(idx, 1);

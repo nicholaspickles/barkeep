@@ -21,11 +21,11 @@ import Checkout from "./Checkout";
 
 const Main = () => {
   const ProductWithID = ({ match }) => {
-    const drink = DrinkData.find((drink) => {
-      return parseInt(match.params.id) === drink._id;
+    const dr = DrinkData.find((d) => {
+      return parseInt(match.params.id) === d._id;
     });
 
-    return <IndividualProduct product={drink} />;
+    return <IndividualProduct product={dr} />;
   };
 
   return (
