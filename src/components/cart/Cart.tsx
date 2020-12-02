@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Badge, Button, Drawer, Tooltip } from "antd";
 import CartContent from "./cartMagic";
 
@@ -14,7 +15,7 @@ import {
 
 const CartDrawer = () => {
   const [update, forceUpdate] = useState(0);
-
+  const history = useHistory();
   const cart = useSelector((state: ApplicationState) => state.cart.itemsInCart);
   const numInCart = cart.reduce(function (acc, cur) {
     return acc + cur.quantity;
@@ -31,6 +32,9 @@ const CartDrawer = () => {
   };
   const onClose = () => {
     dispatch(setCartVisibility(false));
+  };
+  const onCheckout = () => {
+    history.push("/checkout");
   };
 
   const handleRefresh = () => {
@@ -77,7 +81,7 @@ const CartDrawer = () => {
               <Button onClick={onClose} style={{ marginRight: 8 }}>
                 Close
               </Button>
-              <Button onClick={onClose} type="primary">
+              <Button onClick={onCheckout} type="primary">
                 Checkout &nbsp; <RightOutlined />
               </Button>
             </div>

@@ -17,6 +17,7 @@ import IndividualProduct from "./products/indivProduct";
 import About from "./About";
 import Contact from "./Contact";
 import Convert from "./convertPage/Convert";
+import Checkout from "./Checkout";
 
 const Main = () => {
   const ProductWithID = ({ match }) => {
@@ -39,6 +40,7 @@ const Main = () => {
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/convert" component={Convert} />
+            <Route path="/checkout" component={Checkout} />
             <Redirect to="/" />
           </Switch>
         </div>
