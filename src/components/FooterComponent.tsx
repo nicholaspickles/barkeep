@@ -127,7 +127,6 @@ const Foot = () => {
     <Layout>
       <Footer
         style={{
-          borderTop: "1px solid #e8e8e8",
           height: "30%",
           backgroundColor: "#3E3F5A",
           textAlign: "center",

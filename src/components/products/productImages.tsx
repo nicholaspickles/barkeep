@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col } from "antd";
 
-import { SideImages } from "../../styles";
+import { SideImageStyle } from "../../styles";
+import DescriptionCard from "./description";
 
 const ProductImages = ({ product }) => {
   const firstImage = product.image_1;
@@ -20,55 +21,81 @@ const ProductImages = ({ product }) => {
     }
   };
 
+  const BigImageComponent = () => {
+    return (
+      <div
+        style={{
+          maxWidth: "80%",
+          height: "auto",
+          marginLeft: "7%",
+          marginTop: "5%",
+          backgroundColor: "coral",
+        }}
+      >
+        <img
+          src={bigImagePath}
+          style={{
+            maxWidth: "100%",
+            maxHeight: "100%",
+            objectFit: "contain",
+          }}
+        />
+      </div>
+    );
+  };
+
   const SideImages = () => {
     return (
-      <div style={{ marginLeft: "25%", marginTop: "15%" }}>
+      <div
+        style={{
+          marginLeft: "25%",
+          marginTop: "15%",
+          maxWidth: "40vw",
+          height: "auto",
+        }}
+      >
         <Row gutter={[8, 16]}>
-          <img
-            onMouseEnter={() => handleHover("1")}
-            src={product.image_1}
-            style={{ height: "83px", width: "100px" }}
-          />
+          <Col>
+            <img
+              onMouseEnter={() => handleHover("1")}
+              src={product.image_1}
+              style={{ maxHeight: "15vh", maxWidth: "100%" }}
+            />
+          </Col>
         </Row>
         <Row gutter={[8, 16]} style={{ marginTop: "2%" }}>
-          <img
-            onMouseEnter={() => handleHover("2")}
-            src={product.image_2}
-            style={{ height: "83px", width: "100px" }}
-          />
+          <Col>
+            <img
+              onMouseEnter={() => handleHover("2")}
+              src={product.image_2}
+              style={{ maxHeight: "15vh", maxWidth: "100%" }}
+            />
+          </Col>
         </Row>
         <Row gutter={[8, 16]} style={{ marginTop: "2%" }}>
-          <img
-            onMouseEnter={() => handleHover("3")}
-            src={product.image_3}
-            style={{ height: "83px", width: "100px" }}
-          />
+          <Col>
+            <img
+              onMouseEnter={() => handleHover("3")}
+              src={product.image_3}
+              style={{ maxHeight: "15vh", maxWidth: "100%" }}
+            />
+          </Col>
         </Row>
       </div>
     );
   };
 
   return (
-    <>
-      <Row style={{ marginBottom: "15%" }}>
-        <Col flex={2}>
+    <div style={{ maxWidth: "100%" }}>
+      <Row>
+        <Col span={7}>
           <SideImages />
         </Col>
-        <Col flex={3}>
-          <div style={{ height: "500px", width: "500px" }}>
-            <img
-              src={bigImagePath}
-              style={{
-                height: "500px",
-                width: "auto",
-                maxWidth: "700px",
-                marginLeft: "20%",
-              }}
-            />
-          </div>
+        <Col span={17}>
+          <BigImageComponent />
         </Col>
       </Row>
-    </>
+    </div>
   );
 };
 

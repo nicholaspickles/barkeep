@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import { Col, Row, Breadcrumb } from "antd";
@@ -23,7 +23,7 @@ const IndividualProduct = ({ product }) => {
         <Breadcrumb.Item>{product.name}</Breadcrumb.Item>
       </Breadcrumb>
       <Row>
-        <Col xs={24} xl={16}>
+        <Col xs={24} xl={16} style={{ maxWidth: "100%" }}>
           <ProductImages product={product} />
         </Col>
         <Col xs={24} xl={8}>

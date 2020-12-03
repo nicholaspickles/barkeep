@@ -22,7 +22,7 @@ const About = () => {
         pauseOnHover={false}
         autoplaySpeed={4000}
         speed={1500}
-        style={{ marginBottom: "3%" }}
+        style={{ marginBottom: "3%", maxWidth: "100%" }}
       >
         <CarouselWrapper>
           <Carouselh3>

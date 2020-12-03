@@ -108,20 +108,18 @@ export const Flower2 = styled.img`
 //ABOUT
 export const StyledImage = styled.img`
     display: block;
-    height:100%;
+    max-height:65vh;
+    max-width:100%;
     margin-left:auto;
     margin-right:auto;
-    margin-bottom:auto;
 `
 export const CarouselWrapper = styled.div`
-    height: 500px;
     overflow:hidden;
     display:flex;
     align-items:center;
     justify-content:center;
 `
 export const Carouselh3 = styled.h3`
-    height: 500px;
     color: black;
     background-color:white;
     margin-right:10%;
@@ -186,7 +184,7 @@ export const InputNumberProducts = styled(InputNumber)`
     border-bottom-color:#707070;
 `
 
-export const SideImages = styled.img`
+export const SideImageStyle = styled.img`
     height: 191px;
     width:auto;
 `

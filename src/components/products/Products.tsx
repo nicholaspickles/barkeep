@@ -53,7 +53,6 @@ const DisplayDrinks = ({ drinkList }) => {
               hoverable
               bordered={false}
               style={{
-                marginLeft: "9%",
                 marginTop: "5%",
                 textAlign: "center",
                 width: "80%",
