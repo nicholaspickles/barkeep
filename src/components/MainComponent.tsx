@@ -18,6 +18,7 @@ import About from "./About";
 import Contact from "./Contact";
 import Convert from "./convertPage/Convert";
 import Checkout from "./Checkout";
+import EmailToMe from "./emailToMe";
 
 const Main = () => {
   const ProductWithID = ({ match }) => {
@@ -40,7 +41,8 @@ const Main = () => {
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/convert" component={Convert} />
-            <Route path="/checkout" component={Checkout} />
+            <Route exact path="/checkout" component={Checkout} />
+            <Route path="/checkout/lastpage" component={EmailToMe} />
             <Redirect to="/" />
           </Switch>
         </div>

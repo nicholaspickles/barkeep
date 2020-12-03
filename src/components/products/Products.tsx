@@ -62,7 +62,11 @@ const DisplayDrinks = ({ drinkList }) => {
               <Link to={`/products/${drink._id}`} style={{ color: "black" }}>
                 <img
                   src={drink.image}
-                  style={{ maxHeight: 200, maxWidth: 200, marginBottom: 5 }}
+                  style={{
+                    maxHeight: "auto",
+                    maxWidth: "100%",
+                    marginBottom: 5,
+                  }}
                 />
                 <br />
                 <UnderlineP style={{ margin: "0", padding: "5px" }}>
