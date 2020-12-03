@@ -138,13 +138,13 @@ const Foot = () => {
     >
       <Row>
         <Col flex={1}>
-          <Flower2 src={newFlowa} />
+          <Flower1 src={cutflower1} />
         </Col>
         <Col flex={15}>
           <FooterText />
         </Col>
         <Col flex={1}>
-          <Flower1 src={cutflower1} />
+          <Flower2 src={newFlowa} />
         </Col>
       </Row>
     </Footer>
