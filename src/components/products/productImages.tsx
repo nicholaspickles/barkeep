@@ -29,7 +29,6 @@ const ProductImages = ({ product }) => {
           height: "auto",
           marginLeft: "7%",
           marginTop: "5%",
-          backgroundColor: "coral",
         }}
       >
         <img

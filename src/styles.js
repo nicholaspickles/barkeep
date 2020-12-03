@@ -78,14 +78,22 @@ export const FootTextBold = styled.div`
 
 export const FootInfo = styled.div`
     bottom:0;
+    width:100%;
+    height:100%;
+    left:0;
+    right:0;
+`
+
+export const FootFlowers = styled.div`
+    bottom:0;
     z-index:2;
+
 `
 
 export const Flower1 = styled.img`
-    position:absolute;
+    padding: 0;
+    margin:0;
     float:left;
-    left:0;
-    bottom:0;
     height:200px;
     width:200px;
     maxWidth: 300px;
@@ -94,15 +102,14 @@ export const Flower1 = styled.img`
 `
 
 export const Flower2 = styled.img`
-    position:absolute;
-    right:0;
-    bottom:0;
+    padding: 0;
+    margin:0;
     height:200px;
     width:200px;
     maxWidth: 300px;
     minWidth: 200px;
+    float:right;
     overflowX: hidden;
-    z-index:1;
 `
 
 //ABOUT

@@ -44,9 +44,7 @@ const Main = () => {
             <Redirect to="/" />
           </Switch>
         </div>
-        <div>
-          <Foot />
-        </div>
+        <Foot />
       </Router>
     </div>
   );

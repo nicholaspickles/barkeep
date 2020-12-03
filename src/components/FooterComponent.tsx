@@ -8,6 +8,7 @@ import {
   FootInfo,
   Flower1,
   Flower2,
+  FootFlowers,
 } from "../styles";
 import { Layout, Row, Col } from "antd";
 import {
@@ -106,7 +107,7 @@ const Policy = () => {
 
 const FooterText = () => {
   return (
-    <FootInfo>
+    <FootInfo style={{ zIndex: 5 }}>
       <Row justify="center" align="middle">
         <Col xs={24} xl={8}>
           <Queries />
@@ -124,29 +125,29 @@ const FooterText = () => {
 
 const Foot = () => {
   return (
-    <Layout>
-      <Footer
-        style={{
-          height: "30%",
-          backgroundColor: "#3E3F5A",
-          textAlign: "center",
-          overflowY: "auto",
-          overflowX: "hidden",
-        }}
-      >
-        <div style={{ position: "relative" }}>
+    <Footer
+      style={{
+        paddingLeft: 0,
+        paddingRight: 0,
+        height: "30%",
+        backgroundColor: "#3E3F5A",
+        textAlign: "center",
+        overflowY: "auto",
+        overflowX: "hidden",
+      }}
+    >
+      <Row>
+        <Col flex={1}>
+          <Flower2 src={newFlowa} />
+        </Col>
+        <Col flex={15}>
           <FooterText />
-          <Row justify="space-around" align="bottom">
-            <Col span={12} pull={1}>
-              <Flower1 src={cutflower1} />
-            </Col>
-            <Col span={12} push={1}>
-              <Flower2 src={newFlowa} />
-            </Col>
-          </Row>
-        </div>
-      </Footer>
-    </Layout>
+        </Col>
+        <Col flex={1}>
+          <Flower1 src={cutflower1} />
+        </Col>
+      </Row>
+    </Footer>
   );
 };
 
