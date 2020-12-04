@@ -23,7 +23,7 @@ const ProductImages = ({ product }) => {
       <div
         style={{
           maxWidth: "80%",
-          height: "auto",
+          height: "80vh",
           marginLeft: "7%",
           marginTop: "5%",
         }}
