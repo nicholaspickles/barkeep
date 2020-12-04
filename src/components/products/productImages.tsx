@@ -22,8 +22,6 @@ const ProductImages = ({ product }) => {
     return (
       <div
         style={{
-          maxWidth: "80%",
-          height: "80vh",
           marginLeft: "7%",
           marginTop: "5%",
         }}
@@ -32,9 +30,10 @@ const ProductImages = ({ product }) => {
           alt="the main featured big drink"
           src={bigImagePath}
           style={{
-            maxWidth: "100%",
-            maxHeight: "100%",
+            width: "100%",
+            maxHeight: "400px",
             objectFit: "contain",
+            scale: "revert",
           }}
         />
       </div>
