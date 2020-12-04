@@ -1,16 +1,7 @@
 import React, { useState } from "react";
-import { Form, Input, InputNumber, Select, Button } from "antd";
-import { GeneralWrapper, GeneralHeader, GeneralBody } from "../../styles";
+import { Form, InputNumber, Select, Button } from "antd";
+import { GeneralWrapper } from "../../styles";
 import { DrinkData } from "../../shared/products";
-
-//REDUX
-import { ApplicationState } from "../../redux/store";
-import { useSelector, useDispatch, connect } from "react-redux";
-import {
-  updateConversionType,
-  insertOrderDetails,
-  ConversionDetails,
-} from "../../redux/ducks/conversions";
 
 const ConvertCocktailForm = () => {
   const [ttlVol, setTtlVol] = useState();
@@ -19,7 +10,6 @@ const ConvertCocktailForm = () => {
     spirit: "",
     cocktail: [],
   });
-  const dispatch = useDispatch();
   const [form] = Form.useForm();
 
   const cocktailList = (spirit) => {

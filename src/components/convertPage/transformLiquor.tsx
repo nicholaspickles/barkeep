@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import { Button, Form, Select, Input } from "antd";
+import { Button, Form, Select } from "antd";
 
-import { GeneralHeader, GeneralWrapper } from "../../styles";
+import { GeneralWrapper } from "../../styles";
 
 const TransformLiquorForm = () => {
   const [form] = Form.useForm();

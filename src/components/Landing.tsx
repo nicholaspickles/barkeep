@@ -18,6 +18,7 @@ const Landing = () => {
         <Col span={12}>
           <div style={{ textAlign: "center" }}>
             <img
+              alt="landing page flower / drink"
               src={landingFlower}
               style={{
                 maxHeight: "75vh",

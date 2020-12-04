@@ -25,8 +25,8 @@ const Checkout = () => {
   );
   const finalArr = makeNeat(ordered);
 
-  const handleRemoveItem = (id) => {
-    var idx = ordered.findIndex((drink) => drink._id == id);
+  const handleRemoveItem = (idi) => {
+    var idx = ordered.findIndex((drink) => drink._id === idi);
     ordered.splice(idx, 1);
     forceUpdate(() => update + 1);
   };

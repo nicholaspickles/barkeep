@@ -1,8 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Row, Col } from "antd";
-
-import { SideImageStyle } from "../../styles";
-import DescriptionCard from "./description";
 
 const ProductImages = ({ product }) => {
   const firstImage = product.image_1;
@@ -32,6 +29,7 @@ const ProductImages = ({ product }) => {
         }}
       >
         <img
+          alt="the main featured big drink"
           src={bigImagePath}
           style={{
             maxWidth: "100%",
@@ -56,6 +54,7 @@ const ProductImages = ({ product }) => {
         <Row gutter={[8, 16]}>
           <Col>
             <img
+              alt="first drink option"
               onMouseEnter={() => handleHover("1")}
               src={product.image_1}
               style={{ maxHeight: "15vh", maxWidth: "100%" }}
@@ -65,6 +64,7 @@ const ProductImages = ({ product }) => {
         <Row gutter={[8, 16]} style={{ marginTop: "2%" }}>
           <Col>
             <img
+              alt="second drink option"
               onMouseEnter={() => handleHover("2")}
               src={product.image_2}
               style={{ maxHeight: "15vh", maxWidth: "100%" }}
@@ -74,6 +74,7 @@ const ProductImages = ({ product }) => {
         <Row gutter={[8, 16]} style={{ marginTop: "2%" }}>
           <Col>
             <img
+              alt="third drink option"
               onMouseEnter={() => handleHover("3")}
               src={product.image_3}
               style={{ maxHeight: "15vh", maxWidth: "100%" }}

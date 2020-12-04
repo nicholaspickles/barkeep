@@ -48,7 +48,7 @@ const DisplayDrinks = ({ drinkList }) => {
     <div style={{ marginBottom: "3%" }}>
       <Row gutter={16}>
         {drinkList.map((drink) => (
-          <Col xs={12} xl={8}>
+          <Col xs={12} xl={8} key={drink._id}>
             <Card
               hoverable
               bordered={false}
@@ -61,6 +61,7 @@ const DisplayDrinks = ({ drinkList }) => {
             >
               <Link to={`/products/${drink._id}`} style={{ color: "black" }}>
                 <img
+                  alt="Drankz"
                   src={drink.image}
                   style={{
                     maxHeight: "auto",
