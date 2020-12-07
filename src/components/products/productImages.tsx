@@ -30,7 +30,7 @@ const ProductImages = ({ product }) => {
           alt="the main featured big drink"
           src={bigImagePath}
           style={{
-            width: "100%",
+            width: "90%",
             maxHeight: "400px",
             objectFit: "contain",
             scale: "revert",

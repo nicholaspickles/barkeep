@@ -33,7 +33,7 @@ const Main = () => {
     <div>
       <Router>
         <Head />
-        <div className="body" style={{ height: "100%", minHeight: "100%" }}>
+        <div className="body" style={{ minHeight: "100vh" }}>
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/products" component={Products} />

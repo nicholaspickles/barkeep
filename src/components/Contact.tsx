@@ -36,9 +36,9 @@ const Contact = () => {
     <GeneralWrapper>
       <GeneralHeader>Got any questions or ideas? </GeneralHeader>
       <hr style={{ marginLeft: "5%", marginRight: "5%" }} />
-      <GeneralBody style={{ marginBottom: "2%", marginTop: "2%" }}>
+      <p style={{ marginBottom: "2%", marginTop: "2%", textAlign: "center" }}>
         Let us know in the form below or drop us an email at barkeep@gmail.com!
-      </GeneralBody>
+      </p>
       <Card
         title="Contact Form"
         hoverable

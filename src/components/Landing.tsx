@@ -14,7 +14,7 @@ const Landing = () => {
   };
   return (
     <div>
-      <Row>
+      <Row style={{ height: "100vh", minHeight: "100vh" }}>
         <Col span={12}>
           <div style={{ textAlign: "center" }}>
             <img

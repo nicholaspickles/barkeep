@@ -65,7 +65,7 @@ const DisplayDrinks = ({ drinkList }) => {
                   src={drink.image}
                   style={{
                     maxHeight: "auto",
-                    maxWidth: "100%",
+                    maxWidth: "80%",
                     marginBottom: 5,
                   }}
                 />
