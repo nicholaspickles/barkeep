@@ -21,7 +21,6 @@ const OtherProducts = ({ featured }) => {
   const visited = useSelector(
     (state: ApplicationState) => state.visited.visitedArr
   );
-
   const handleAdd = (drinkId) => {
     const drink = DrinkData[drinkId];
     const { _id, name, image, price } = drink;
