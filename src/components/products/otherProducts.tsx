@@ -1,18 +1,20 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-import { Card } from "antd";
-import { GeneralHeader } from "../../styles";
+import { Card, Row, Col, message } from "antd";
+import { GeneralHeader, AddToCart, UnderlineP } from "../../styles";
+import { createEntry } from "../../shared/helperFunctions";
 
 //REDUX
 import { DrinkData } from "../../shared/products";
 import { useSelector, useDispatch } from "react-redux";
 import { ApplicationState } from "../../redux/store";
 import { visit, setAllVisited } from "../../redux/ducks/visitedProducts";
+import { addCartItems } from "../../redux/ducks/cart";
 
 const OtherProducts = ({ featured }) => {
   const dispatch = useDispatch();
-  const history = useHistory();
+
   const allVisited = useSelector(
     (state: ApplicationState) => state.visited.allVisited
   );
@@ -20,11 +22,42 @@ const OtherProducts = ({ featured }) => {
     (state: ApplicationState) => state.visited.visitedArr
   );
 
+  const handleAdd = (drinkId) => {
+    const drink = DrinkData[drinkId];
+    const { _id, name, image, price } = drink;
+    const order = createEntry({
+      id: _id,
+      quantity: 1,
+      image: image,
+      name: name,
+      price: price,
+    });
+    dispatch(addCartItems(order));
+    message.success({
+      content: `${order.quantity} x ${order.name} has been added to your bag.`,
+      duration: 0.8,
+      style: {
+        marginTop: "40px",
+      },
+    });
+  };
+
+  const visitDrink = (drinkID) => {
+    if (visited.length === 5) {
+      dispatch(setAllVisited(true));
+    }
+    if (!(drinkID in visited)) {
+      dispatch(visit(drinkID));
+    }
+  };
+
   const OtherDrinks = () => {
-    const notFeatured = DrinkData.filter((drink) => drink._id !== featured);
+    const notFeatured = DrinkData.filter((drink) => drink._id !== featured._id);
+    console.log(notFeatured);
     var drinkArray = [];
     if (allVisited) {
-      drinkArray.push(notFeatured.slice(0, 3));
+      console.log(allVisited);
+      drinkArray = notFeatured.slice(0, 3);
     } else {
       for (var drinkId of notFeatured) {
         if (!(drinkId._id in visited)) {
@@ -35,11 +68,51 @@ const OtherProducts = ({ featured }) => {
       drinkArray = drinkArray.slice(0, 3);
     }
     return (
-      <Card>
+      <Row
+        gutter={16}
+        style={{
+          marginLeft: "4vw",
+          marginBottom: "5vh",
+        }}
+      >
         {drinkArray.map((drink) => (
-          <Card.Grid>{drink.name}</Card.Grid>
+          <Col xs={24} xl={8} key={drink._id} style={{ textAlign: "center" }}>
+            <Card
+              hoverable
+              bordered={false}
+              style={{
+                marginTop: "5%",
+                textAlign: "center",
+                width: "80%",
+                height: "auto",
+              }}
+            >
+              <Link
+                to={`/products/${drink._id}`}
+                style={{ color: "black" }}
+                onClick={() => visitDrink(drink._id)}
+              >
+                <img
+                  alt="Drankz"
+                  src={drink.image}
+                  style={{
+                    maxHeight: "auto",
+                    maxWidth: "50%",
+                    marginBottom: 5,
+                  }}
+                />
+                <br />
+                <UnderlineP style={{ margin: "0", padding: "5px" }}>
+                  {drink.name} <br /> ${drink.price}
+                </UnderlineP>
+              </Link>
+              <AddToCart type="primary" onClick={() => handleAdd(drink._id)}>
+                Add to Bag
+              </AddToCart>
+            </Card>
+          </Col>
         ))}
-      </Card>
+      </Row>
     );
   };
 

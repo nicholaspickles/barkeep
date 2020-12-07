@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import { Col, Row, Breadcrumb } from "antd";
@@ -12,7 +12,7 @@ import OtherProducts from "./otherProducts";
 const IndividualProduct = ({ product }) => {
   const history = useHistory();
   const handleBack = () => {
-    history.goBack();
+    history.push("/products");
   };
 
   return (
@@ -31,7 +31,7 @@ const IndividualProduct = ({ product }) => {
           <DescriptionCard product={product} />
         </Col>
       </Row>
-      <OtherProducts featured={product._id} />
+      <OtherProducts featured={product} />
     </div>
   );
 };
