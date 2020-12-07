@@ -5,8 +5,11 @@ import { Card, Tabs, Row, Col, message } from "antd";
 import "antd/dist/antd.css";
 import { AddToCart, UnderlineP } from "../../styles";
 
+//REDUX
+import { ApplicationState } from "../../redux/store";
+import { visit, setAllVisited } from "../../redux/ducks/visitedProducts";
 import { addCartItems, setCartVisibility } from "../../redux/ducks/cart";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { DrinkData } from "../../shared/products";
 import { createEntry } from "../../shared/helperFunctions";
@@ -44,6 +47,18 @@ const DisplayDrinks = ({ drinkList }) => {
     }
   };
 
+  const visited = useSelector(
+    (state: ApplicationState) => state.visited.visitedArr
+  );
+  const visitDrink = (drinkID) => {
+    if (visited.length === 5) {
+      dispatch(setAllVisited(true));
+    }
+    if (!(drinkID in visited)) {
+      dispatch(visit(drinkID));
+    }
+  };
+
   return (
     <div style={{ marginBottom: "3%" }}>
       <Row gutter={16}>
@@ -59,7 +74,11 @@ const DisplayDrinks = ({ drinkList }) => {
                 height: "auto",
               }}
             >
-              <Link to={`/products/${drink._id}`} style={{ color: "black" }}>
+              <Link
+                to={`/products/${drink._id}`}
+                style={{ color: "black" }}
+                onClick={() => visitDrink(drink._id)}
+              >
                 <img
                   alt="Drankz"
                   src={drink.image}

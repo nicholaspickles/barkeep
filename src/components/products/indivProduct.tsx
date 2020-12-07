@@ -7,6 +7,7 @@ import { ShopOutlined } from "@ant-design/icons";
 
 import DescriptionCard from "./description";
 import ProductImages from "./productImages";
+import OtherProducts from "./otherProducts";
 
 const IndividualProduct = ({ product }) => {
   const history = useHistory();
@@ -30,6 +31,7 @@ const IndividualProduct = ({ product }) => {
           <DescriptionCard product={product} />
         </Col>
       </Row>
+      <OtherProducts featured={product._id} />
     </div>
   );
 };
